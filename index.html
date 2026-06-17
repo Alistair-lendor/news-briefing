@@ -3,53 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>每日新闻简报</title>
+  <title>每日新闻简报 · 2026年6月13日</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f6fa; color: #1a1a2e; line-height: 1.7; }
-    .header { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); color: #fff; padding: 48px 0 40px; text-align: center; }
-    .header .date { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-    .header h1 { font-size: 32px; font-weight: 700; letter-spacing: 1px; }
-    .header .subtitle { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 8px; }
-    .nav { background: #fff; border-bottom: 1px solid #e8e8e8; position: sticky; top: 0; z-index: 100; }
-    .nav-inner { max-width: 960px; margin: 0 auto; display: flex; gap: 0; overflow-x: auto; }
-    .nav-item { padding: 14px 22px; font-size: 13px; color: #666; cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; text-decoration: none; display: inline-block; }
-    .nav-item:hover, .nav-item.active { color: #302b63; border-bottom-color: #302b63; background: #f8f8ff; }
-    .container { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
-    .section { margin-bottom: 40px; }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #eee; }
-    .section-tag { display: inline-block; padding: 4px 14px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-    .section-title { font-size: 20px; font-weight: 700; color: #1a1a2e; }
-    .tag-politics { background: #e8e6ff; color: #302b63; }
-    .tag-conflict { background: #ffe8e8; color: #8b0000; }
-    .tag-economy { background: #e8f5e9; color: #1b5e20; }
-    .tag-ai { background: #e3f2fd; color: #0d47a1; }
-    .card { background: #fff; border-radius: 10px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-left: 3px solid transparent; transition: box-shadow 0.2s; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: #f5f6fa;
+      color: #1a1a2e;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      color: #fff;
+      padding: 48px 0 40px;
+      text-align: center;
+    }
+    .header .date {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .header .subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 8px;
+    }
+
+    /* Nav */
+    .nav {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .nav-item {
+      padding: 14px 22px;
+      font-size: 13px;
+      color: #666;
+      cursor: pointer;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .nav-item:hover, .nav-item.active {
+      color: #302b63;
+      border-bottom-color: #302b63;
+      background: #f8f8ff;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 40px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #eee;
+    }
+    .section-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+
+    /* Tag colors */
+    .tag-politics   { background: #e8e6ff; color: #302b63; }
+    .tag-conflict   { background: #ffe8e8; color: #8b0000; }
+    .tag-economy    { background: #e8f5e9; color: #1b5e20; }
+    .tag-ai         { background: #e3f2fd; color: #0d47a1; }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border-left: 3px solid transparent;
+      transition: box-shadow 0.2s;
+    }
     .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.09); }
     .card-politics { border-left-color: #302b63; }
     .card-conflict { border-left-color: #8b0000; }
-    .card-economy { border-left-color: #1b5e20; }
-    .card-ai { border-left-color: #0d47a1; }
-    .card-meta { font-size: 11px; color: #999; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
-    .card-meta .source { background: #f0f0f0; padding: 2px 8px; border-radius: 3px; font-size: 10px; color: #555; }
-    .card-title { font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.5; }
-    .card-body { font-size: 14px; color: #444; line-height: 1.8; }
-    .card-body p { margin-bottom: 8px; }
-    .highlight { background: #fffde7; padding: 2px 6px; border-radius: 3px; font-weight: 600; }
-    .data-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
-    .data-table th { background: #f5f5f5; padding: 8px 12px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
-    .data-table td { padding: 8px 12px; border-bottom: 1px solid #eee; color: #444; }
+    .card-economy  { border-left-color: #1b5e20; }
+    .card-ai       { border-left-color: #0d47a1; }
+
+    .card-meta {
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-meta .source {
+      background: #f0f0f0;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 10px;
+      color: #555;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .card-body {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.8;
+    }
+    .card-body p {
+      margin-bottom: 8px;
+    }
+    .highlight {
+      background: #fffde7;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    .data-table th {
+      background: #f5f5f5;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+    }
+    .data-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+      color: #444;
+    }
     .data-table tr:hover td { background: #fafafa; }
-    .footer { text-align: center; padding: 32px 20px; color: #aaa; font-size: 12px; border-top: 1px solid #eee; background: #fff; }
-    @media print { .nav { display: none; } .header { background: #302b63 !important; } .card { box-shadow: none; border: 1px solid #ddd; } }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: #aaa;
+      font-size: 12px;
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+
+    /* Print */
+    @media print {
+      .nav { display: none; }
+      .header { background: #302b63 !important; }
+      .card { box-shadow: none; border: 1px solid #ddd; }
+    }
   </style>
 </head>
 <body>
+
+<!-- Header -->
 <div class="header">
   <div class="date">DAILY BRIEFING · 每日新闻简报</div>
   <h1>2026年6月13日 · 星期六</h1>
   <div class="subtitle">时政 · 地区冲突 · 经济 · AI ｜ 一手新闻源整理</div>
 </div>
+
+<!-- Nav -->
 <div class="nav">
   <div class="nav-inner">
     <a class="nav-item active" href="#politics">🏛️ 时政要闻</a>
@@ -58,126 +222,227 @@
     <a class="nav-item" href="#ai">🤖 AI前沿</a>
   </div>
 </div>
+
+<!-- Content -->
 <div class="container">
 
+  <!-- 时政要闻 -->
   <div class="section" id="politics">
     <div class="section-header">
       <span class="section-tag tag-politics">时政</span>
       <span class="section-title">时政要闻</span>
     </div>
+
     <div class="card card-politics">
-      <div class="card-meta"><span class="source">新华社 / 人民日报</span><span>2026-06-13</span></div>
+      <div class="card-meta">
+        <span class="source">新华社 / 人民日报</span>
+        <span>2026-06-13</span>
+      </div>
       <div class="card-title">缅甸总统敏昂莱将对中国进行国事访问</div>
       <div class="card-body">
         <p>应国家主席习近平邀请，缅甸总统敏昂莱将于<strong class="highlight">6月15日至19日</strong>对中国进行国事访问。外交部同期宣布：应外交部长王毅邀请，尼泊尔外交部长希西尔将于6月14日至17日访问中国。</p>
         <p>分析：东南亚外交节奏密集，显示中国周边外交在2026年持续活跃。</p>
       </div>
     </div>
+
     <div class="card card-politics">
-      <div class="card-meta"><span class="source">人民日报 / 央视新闻</span><span>2026-06-13</span></div>
+      <div class="card-meta">
+        <span class="source">人民日报 / 央视新闻</span>
+        <span>2026-06-13</span>
+      </div>
       <div class="card-title">国家防总启动防汛四级应急响应 · 七省份进入临战状态</div>
       <div class="card-body">
         <p>国家防总于12日10时针对<strong class="highlight">广东、广西、江西、福建、浙江、贵州、湖南</strong>等七省份启动防汛四级应急响应。国家防总办公室同步部署16个重点省份开展度汛隐患排查，6个联合专家组已赴一线提供指导。</p>
       </div>
     </div>
+
     <div class="card card-politics">
-      <div class="card-meta"><span class="source">国家网信办</span><span>2026-06-13</span></div>
+      <div class="card-meta">
+        <span class="source">国家网信办</span>
+        <span>2026-06-13</span>
+      </div>
       <div class="card-title">国家网信办发布《公约》：网站平台须主动清除涉企虚假信息</div>
       <div class="card-body">
         <p>国家网信办指导重点网站平台共同制定公约，明确网站平台要及时清理侵犯企业家个人权益信息，<strong class="highlight">严管侮辱谩骂、造谣诽谤企业家的言论</strong>。此举被视为优化营商网络环境的重要信号。</p>
       </div>
     </div>
+
+    <div class="card card-politics">
+      <div class="card-meta">
+        <span class="source">三协会联合发布</span>
+        <span>2026-06-13</span>
+      </div>
+      <div class="card-title">破除演员"撕番"乱象 · 三协会发文规范电视剧演员署名</div>
+      <div class="card-body">
+        <p>中国电视剧制作产业协会等三协会发文规范电视剧（网络剧）演员署名：在"领衔主演""特别出演""出演"分类管理基础上，<strong class="highlight">按姓氏笔画由少至多排列</strong>；原则上应使用法定姓名，不得单独使用艺名。</p>
+      </div>
+    </div>
   </div>
 
+  <!-- 地区冲突 -->
   <div class="section" id="conflict">
     <div class="section-header">
       <span class="section-tag tag-conflict">冲突</span>
       <span class="section-title">地区冲突</span>
     </div>
+
     <div class="card card-conflict">
-      <div class="card-meta"><span class="source">人民日报海外版 / 凤凰网</span><span>2026-06-10</span></div>
+      <div class="card-meta">
+        <span class="source">人民日报海外版 / 凤凰网</span>
+        <span>2026-06-10</span>
+      </div>
       <div class="card-title">美以伊战事进入第100天 · 中东地缘政治版图深刻重塑</div>
       <div class="card-body">
         <p>6月7日，美以伊战事进入第100天。这场战事正在深刻重塑中东地缘政治版图，呈现三大特征：</p>
         <p>① <strong>对抗性</strong>：沙特与巴基斯坦结盟，以色列与阿联酋走近，伊朗与"抵抗阵线"深度抱团；巴勒斯坦问题被进一步边缘化。</p>
         <p>② <strong>无序性</strong>：波斯湾、红海、地中海风险交织，人工智能应用于军事领域后，局势不确定性大幅上升。</p>
         <p>③ <strong>自立性</strong>：中东国家不再单一依附某一方，积极拓展安全合作伙伴，区域多极化特征愈发鲜明。</p>
-        <p>📌 <strong>关键进展</strong>：阿联酋于5月1日正式<strong class="highlight">退出欧佩克及"欧佩克+"机制</strong>；巴基斯坦总理称美伊已就和平协议文本达成一致。</p>
+        <p>📌 <strong>关键进展</strong>：阿联酋于5月1日正式<strong class="highlight">退出欧佩克及"欧佩克+"机制</strong>；巴基斯坦总理称美伊已就和平协议文本达成一致；伊朗外长称伊美"从未如此接近达成"谅解备忘录。</p>
       </div>
     </div>
+
     <div class="card card-conflict">
-      <div class="card-meta"><span class="source">央视新闻 / 新浪财经</span><span>2026-06-03</span></div>
+      <div class="card-meta">
+        <span class="source">央视新闻 / 新浪财经</span>
+        <span>2026-06-03</span>
+      </div>
       <div class="card-title">美伊互袭波及多国 · 中东局势骤然升级</div>
       <div class="card-body">
-        <p>6月2日深夜至3日凌晨，伊朗伊斯兰革命卫队对美军驻巴林第五舰队总部及驻科威特等中东地区军事基地发动导弹和无人机袭击，以报复美军此前袭击伊朗相关油轮。</p>
-        <p>霍尔木兹海峡梗阻导致进出口受限，美国"石油美元换安全"传统架构彻底动摇。</p>
+        <p>6月2日深夜至3日凌晨，美伊局势骤然升级：伊朗伊斯兰革命卫队对美军驻巴林第五舰队总部及驻科威特等中东地区军事基地发动导弹和无人机袭击，以报复美军此前袭击伊朗相关油轮。</p>
+        <p>霍尔木兹海峡梗阻导致进出口受限，海湾国家安全与发展双线承压，美国"石油美元换安全"传统架构彻底动摇。</p>
+      </div>
+    </div>
+
+    <div class="card card-conflict">
+      <div class="card-meta">
+        <span class="source">布鲁金斯学会 / 凤凰网</span>
+        <span>2026-06-07</span>
+      </div>
+      <div class="card-title">美以伊冲突百日 · 特朗普面临国内政治压力上升</div>
+      <div class="card-body">
+        <p>马里兰大学最新民调显示：<strong class="highlight">多数美国人认为这场战争对美国利益的负面影响大于正面影响</strong>；近四成美国人认为美伊都没有赢得这场战争，远高于认为美国获胜（16%）的比例。随着战事进入第100天，特朗普面临的政治压力不断上升。</p>
       </div>
     </div>
   </div>
 
+  <!-- 经济动态 -->
   <div class="section" id="economy">
     <div class="section-header">
       <span class="section-tag tag-economy">经济</span>
       <span class="section-title">经济动态</span>
     </div>
+
     <div class="card card-economy">
-      <div class="card-meta"><span class="source">中国网财经 / 国家统计局</span><span>2026-06-13</span></div>
+      <div class="card-meta">
+        <span class="source">中国网财经 / 国家统计局</span>
+        <span>2026-06-13</span>
+      </div>
       <div class="card-title">5月物价数据发布 · CPI温和上涨 PPI涨幅创近年新高</div>
       <div class="card-body">
         <table class="data-table">
           <tr><th>指标</th><th>数值</th><th>解读</th></tr>
-          <tr><td>CPI（5月同比）</td><td><strong>上涨1.2%</strong></td><td>总体平稳，下半年前高后稳</td></tr>
-          <tr><td>PPI（5月同比）</td><td>涨幅创近年新高</td><td>受算力需求增长带动</td></tr>
+          <tr><td>CPI（5月同比）</td><td><strong>上涨1.2%</strong></td><td>总体平稳，专家预计下半年前高后稳</td></tr>
+          <tr><td>PPI（5月同比）</td><td>涨幅创近年新高</td><td>受算力需求增长带动多行业价格上涨</td></tr>
           <tr><td>个人所得税（前5月同比）</td><td><strong>增长12%</strong></td><td>资本市场贡献度近五成</td></tr>
+          <tr><td>企业债券净融资（前5月同比多增）</td><td>7577亿元</td><td>多元融资支持实体经济</td></tr>
           <tr><td>进出口（月度）</td><td>连续3个月超4万亿元</td><td>外贸延续稳定增长态势</td></tr>
         </table>
         <p>📌 <strong>世界银行</strong>：下调2026年全球经济增长预期至<strong class="highlight">2.5%</strong>。</p>
       </div>
     </div>
+
     <div class="card card-economy">
-      <div class="card-meta"><span class="source">陆家嘴论坛</span><span>2026-06-13</span></div>
+      <div class="card-meta">
+        <span class="source">陆家嘴论坛</span>
+        <span>2026-06-13</span>
+      </div>
       <div class="card-title">陆家嘴论坛今日开幕 · 主题"全球治理倡议下的金融发展与合作"</div>
       <div class="card-body">
-        <p>本届论坛主题设定为"全球治理倡议下的金融发展与合作：新愿景、新挑战和新机遇"。<strong class="highlight">金融监管总局局长丁向群</strong>将出席论坛开幕式，致开幕辞并作主题演讲。</p>
+        <p>本届论坛主题设定为"全球治理倡议下的金融发展与合作：新愿景、新挑战和新机遇"。<strong class="highlight">金融监管总局局长丁向群</strong>将出席论坛开幕式，致开幕辞并作主题演讲。论坛将举办一系列重大项目签约和政策发布活动。</p>
         <p>📌 6月22日将公布6月LPR报价，市场密切关注。</p>
+      </div>
+    </div>
+
+    <div class="card card-economy">
+      <div class="card-meta">
+        <span class="source">商务部 / 国家发改委</span>
+        <span>2026-06-13</span>
+      </div>
+      <div class="card-title">稳出口扩进口 · 国务院部署务实举措稳定外贸</div>
+      <div class="card-body">
+        <p>前5个月中国外贸数据显示：广东外贸进出口连续5个月保持两位数增长；京津冀地区进出口同比增长<strong class="highlight">14.4%</strong>；超1.1万家外企加码在华投资。国务院要求以更加务实举措稳出口、扩进口，国家发展改革委表示将研究储备一批针对性、操作性强的政策工具。</p>
       </div>
     </div>
   </div>
 
+  <!-- AI前沿 -->
   <div class="section" id="ai">
     <div class="section-header">
       <span class="section-tag tag-ai">AI</span>
       <span class="section-title">AI前沿</span>
     </div>
+
     <div class="card card-ai">
-      <div class="card-meta"><span class="source">澎湃新闻 / 微软Build 2026</span><span>2026-06-02</span></div>
+      <div class="card-meta">
+        <span class="source">澎湃新闻 / 微软Build 2026</span>
+        <span>2026-06-02</span>
+      </div>
       <div class="card-title">微软发布7款自研MAI系列模型 · 全面转向"智能体时代"</div>
       <div class="card-body">
-        <p>在年度Build 2026开发者大会上，微软宣布全面转向"智能体时代"，发布<strong class="highlight">7款自研MAI系列模型</strong>，包括首款推理模型MAI-Thinking-1、代码模型MAI-Code-1-Flash，以及新一代拓扑量子芯片Majorana 2。</p>
+        <p>在年度Build 2026开发者大会上，微软宣布全面转向"智能体时代"，发布<strong class="highlight">7款自研MAI系列模型</strong>：</p>
+        <p>① <strong>MAI-Thinking-1</strong>：首款高级推理模型，350亿活跃参数、总参数量约1万亿，AIME 2025得分97.0%，完全基于干净数据从头训练。</p>
+        <p>② <strong>MAI-Code-1-Flash</strong>：首款代码生成模型，已集成至GitHub Copilot和VS Code。</p>
+        <p>③ 同步发布新一代拓扑量子芯片<strong>Majorana 2</strong>，计划<strong>2029年前</strong>推出首台全容错可扩展商用量子计算机。</p>
+        <p>⚠️ 发布当日微软股价跌4.17%，收于441.31美元/股。</p>
       </div>
     </div>
+
     <div class="card card-ai">
-      <div class="card-meta"><span class="source">澎湃新闻 / Anthropic官网</span><span>2026-06-01</span></div>
+      <div class="card-meta">
+        <span class="source">澎湃新闻 / Anthropic官网</span>
+        <span>2026-06-01</span>
+      </div>
       <div class="card-title">Anthropic抢跑IPO · 估值9650亿美元反超OpenAI</div>
       <div class="card-body">
         <p>Anthropic已向美国SEC<strong class="highlight">保密递交S-1注册声明草案</strong>，正式启动IPO筹备流程，若进展顺利最快2026年秋季上市。</p>
-        <p>📊 <strong>估值对比</strong>：Anthropic（H轮后）<strong>9650亿美元</strong> vs OpenAI <strong>8520亿美元</strong>。</p>
+        <p>📊 <strong>估值对比</strong>：Anthropic（H轮后）<strong>9650亿美元</strong> vs OpenAI（3月融资后）<strong>8520亿美元</strong>。</p>
+        <p>📌 与此同时，OpenAI可能已提交S-1但未公布；SpaceX拟IPO估值<strong>1.5万亿美元</strong>，三者扎堆上市引发资本市场高度关注。</p>
       </div>
     </div>
+
     <div class="card card-ai">
-      <div class="card-meta"><span class="source">OpenAI官方</span><span>2026-06-01</span></div>
+      <div class="card-meta">
+        <span class="source">OpenAI官方 / 腾讯新闻</span>
+        <span>2026-06-01</span>
+      </div>
       <div class="card-title">OpenAI官宣进军机器人 · 成立"OpenAI Robotics"团队</div>
       <div class="card-body">
         <p>OpenAI联合创始人Greg Brockman与CEO Sam Altman官宣正式成立"<strong class="highlight">OpenAI Robotics</strong>"团队，公开招募全栈硬件、运营、系统及机器学习工程师，长期愿景是实现"人人拥有个人机器人"。</p>
+        <p>此前Sora团队已全面转型机器人研发，标志着OpenAI从软件向硬件全栈延伸的战略布局。</p>
+      </div>
+    </div>
+
+    <div class="card card-ai">
+      <div class="card-meta">
+        <span class="source">英国《金融时报》/ 新浪科技</span>
+        <span>2026-06-04</span>
+      </div>
+      <div class="card-title">Anthropic、谷歌DeepMind、Meta研究"AI意识"问题</div>
+      <div class="card-body">
+        <p>Anthropic、谷歌DeepMind和Meta等巨头已开始聘请心理学、哲学和伦理学等领域专家，<strong class="highlight">研究机器意识以及所谓AI福利问题</strong>。这标志着AI行业开始严肃对待AI伦理的前沿问题。</p>
+        <p>同期，OpenAI、Anthropic、DeepMind联名致信美国国会，敦促立法强制基因合成服务商筛查订单，防范AI辅助生物武器风险。</p>
       </div>
     </div>
   </div>
 
 </div>
+
+<!-- Footer -->
 <div class="footer">
   <p>每日新闻简报 · 由 WorkBuddy AI 自动整理生成</p>
   <p>信息来源：新华社、人民日报、澎湃新闻、凤凰网、央视新闻、中国网财经、BBC、路透社等一手新闻源</p>
-  <p style="margin-top:8px; color:#ccc;">© 2026 WorkBuddy · 仅供个人参考</p>
+  <p style="margin-top:8px; color:#ccc;">© 2026 WorkBuddy · 仅供个人参考 · 如需订阅每日推送请联系管理员</p>
 </div>
+
 </body>
 </html>
