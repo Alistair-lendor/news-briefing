@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻简报 - 2026年06月16日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f6fa;
+            color: #2d3436;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            padding: 40px 32px;
+            text-align: center;
+            color: #fff;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .header .date {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 4px;
+        }
+        .header .subtitle {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+        .content {
+            padding: 28px 32px;
+        }
+        .module {
+            margin-bottom: 32px;
+        }
+        .module-title {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .module-politics .module-title { background: linear-gradient(90deg, #302b63, #5b4a9e); }
+        .module-conflict .module-title { background: linear-gradient(90deg, #8b0000, #c0392b); }
+        .module-economy .module-title { background: linear-gradient(90deg, #1b5e20, #2e7d32); }
+        .module-ai .module-title { background: linear-gradient(90deg, #0d47a1, #1565c0); }
+
+        .news-item {
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            border-left: 4px solid #ccc;
+            border-radius: 0 6px 6px 0;
+            background: #fafbfc;
+            transition: background 0.2s;
+        }
+        .module-politics .news-item { border-left-color: #302b63; }
+        .module-conflict .news-item { border-left-color: #8b0000; }
+        .module-economy .news-item { border-left-color: #1b5e20; }
+        .module-ai .news-item { border-left-color: #0d47a1; }
+
+        .news-source {
+            display: inline-block;
+            background: #e8e8e8;
+            color: #666;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 6px;
+        }
+        .news-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .news-summary {
+            font-size: 13.5px;
+            color: #444;
+            line-height: 1.7;
+        }
+        .highlight {
+            background: #fff9c4;
+            padding: 1px 4px;
+            border-radius: 2px;
+            font-weight: 600;
+            color: #333;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .data-table th {
+            background: #1b5e20;
+            color: #fff;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .data-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .data-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 32px;
+            color: #999;
+            font-size: 12px;
+            border-top: 1px solid #eee;
+        }
+        .conflict-warning {
+            background: #fff3f3;
+            border-left: 4px solid #8b0000;
+            padding: 10px 14px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: #8b0000;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-right: 6px;
+        }
+        .tag-red { background: #ffeaea; color: #c0392b; }
+        .tag-blue { background: #e8f0fe; color: #1565c0; }
+        .tag-green { background: #e8f5e9; color: #2e7d32; }
+        .tag-purple { background: #f3e8ff; color: #5b4a9e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>📡 每日新闻简报</h1>
+            <div class="date">2026年06月16日 · 星期一</div>
+            <div class="subtitle">一手新闻源 · 客观摘要 · 每日更新</div>
+        </div>
+
+        <div class="content">
+            <!-- 时政模块 -->
+            <div class="module module-politics">
+                <div class="module-title">🏛️ 时政要闻</div>
+
+                <div class="news-item">
+                    <div class="news-source">新华社 · 央广网</div>
+                    <div class="news-title">《求是》杂志发表习近平总书记重要文章《谱写新时代高质量发展新篇章》</div>
+                    <div class="news-summary">
+                        6月16日出版的第12期《求是》杂志发表中共中央总书记、国家主席、中央军委主席习近平的重要文章《谱写新时代高质量发展新篇章》。文章收录了习近平总书记2012年12月至2026年4月期间关于高质量发展的重要论述，系统阐释高质量发展的核心内涵与实践要求。同日，《学习时报》也刊发了该重要文章。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">央视新闻</div>
+                    <div class="news-title">全国人大常委会党组召开会议，学习贯彻习近平总书记重要讲话精神</div>
+                    <div class="news-summary">
+                        全国人大常委会党组召开会议，深入学习贯彻习近平总书记近期重要讲话精神，研究部署相关贯彻落实工作。会议强调要准确把握高质量发展这一新时代的硬道理，切实把思想和行动统一到党中央决策部署上来。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">央广网</div>
+                    <div class="news-title">中央第九指导组正式进驻，开展督导工作</div>
+                    <div class="news-summary">
+                        6月15日，中央第九指导组正式进驻指导相关工作，将重点围绕政策落实、作风建设等方面开展督导，推动各项工作落地见效。此为中央层面持续深化主题教育、强化政治监督的重要举措。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">央广网</div>
+                    <div class="news-title">"赓续文脉 薪火相传"主题采访活动正式启动</div>
+                    <div class="news-summary">
+                        该活动旨在贯彻落实习近平总书记关于文化传承发展的重要论述，推动中华优秀传统文化创造性转化、创新性发展。活动组织各级媒体记者深入基层开展主题采访，全面展现新时代文化建设成就。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 地区冲突模块 -->
+            <div class="module module-conflict">
+                <div class="module-title">🔥 地区冲突</div>
+
+                <div class="conflict-warning">
+                    ⚠️ 重点关注：美伊停战协议达成但尚未正式签署，中东局势仍存重大不确定性；俄乌冲突持续升级，双方互相打击纵深目标。
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">新华社 · 新浪新闻</div>
+                    <div class="news-title">美伊达成停战谅解备忘录，6月19日将在瑞士正式签署协议</div>
+                    <div class="news-summary">
+                        美东时间6月14日下午，美国总统特朗普在社交媒体宣布，美国与伊朗已就停火达成原则性协议。伊朗最高国家安全委员会同日凌晨发表声明确认。双方确定于<span class="highlight">6月19日在瑞士</span>举行正式签字仪式。美方披露霍尔木兹海峡将"免费开放"，但伊方提出将收取"通行服务费"，细节尚未明确。当前协议仅为谅解备忘录，后续将启动<span class="highlight">60天最终协议谈判</span>，双方核心诉求仍存显著分歧。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">央视新闻 · 新华社</div>
+                    <div class="news-title">俄乌冲突持续升级：俄军大规模打击基辅，乌军深入袭击俄境内700公里目标</div>
+                    <div class="news-summary">
+                        6月15日，俄军使用远程精确制导武器和攻击型无人机，对乌克兰基辅、哈尔科夫、第聂伯罗彼得罗夫斯克的国防工业设施发动大规模打击，造成基辅<span class="highlight">4人死亡、23人受伤</span>，约14万用户断电。乌军则对距边境逾700公里的俄雅罗斯拉夫尔州雷宾斯克市国家储备油库实施无人机打击，至少3处大型起火点。俄国防部通报，俄军已控制顿涅茨克和哈尔科夫地区两个居民点，正在康斯坦丁诺夫卡市开展巷战。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">央视新闻</div>
+                    <div class="news-title">特朗普称与普京、泽连斯基通话，双方均表示愿推动危机解决</div>
+                    <div class="news-summary">
+                        美国总统特朗普在法国出席七国集团峰会期间表示，前一日已分别与俄罗斯总统普京、乌克兰总统泽连斯基通话，双方均愿意就解决乌克兰危机"采取行动"。此表态引发国际社会对和谈可能性的关注，但双方核心立场差距依然显著，短期实质性突破难度较大。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">财联社 · 新华社</div>
+                    <div class="news-title">俄TANECO炼油厂遭袭后暂停运营；泽连斯基签署新一轮对俄制裁令</div>
+                    <div class="news-summary">
+                        俄罗斯TANECO炼油厂6月12日遭无人机袭击后已暂停运营，进一步冲击俄方能源供应能力。泽连斯基签署总统令，落实乌克兰国家安全与国防委员会出台的新一轮对俄制裁决议，制裁覆盖<span class="highlight">29名自然人和17家俄罗斯媒体机构</span>。俄外交部发言人扎哈罗娃回应西方和谈条件称"毫无新意"且不可接受。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 经济模块 -->
+            <div class="module module-economy">
+                <div class="module-title">📊 经济动态</div>
+
+                <table class="data-table">
+                    <tr>
+                        <th>指标</th>
+                        <th>2026年5月数值</th>
+                        <th>同比变化</th>
+                        <th>备注</th>
+                    </tr>
+                    <tr>
+                        <td>CPI（居民消费价格）</td>
+                        <td><span class="highlight">101.2</span></td>
+                        <td>上涨1.2%</td>
+                        <td>温和上涨，处于合理区间</td>
+                    </tr>
+                    <tr>
+                        <td>PPI（工业生产者出厂价格）</td>
+                        <td><span class="highlight">103.9</span></td>
+                        <td>上涨3.9%</td>
+                        <td>环比上涨0.5%</td>
+                    </tr>
+                </table>
+
+                <div class="news-item">
+                    <div class="news-source">国家统计局 · 国新办</div>
+                    <div class="news-title">国新办今日举行5月份国民经济运行情况发布会</div>
+                    <div class="news-summary">
+                        国务院新闻办公室于6月16日上午10时举行新闻发布会，国家统计局新闻发言人、总经济师付凌晖介绍2026年5月份国民经济运行情况并答记者问。5月份CPI同比上涨<span class="highlight">1.2%</span>，PPI同比上涨<span class="highlight">3.9%</span>，物价水平总体平稳。市场关注工业、消费、投资、进出口等核心经济指标的具体表现。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">中国人民银行</div>
+                    <div class="news-title">2026年继续实施适度宽松的货币政策，灵活运用降准降息工具</div>
+                    <div class="news-summary">
+                        中国人民银行表示，2026年将继续实施适度宽松的货币政策，把促进经济稳定增长、物价合理回升作为重要考量，灵活高效运用降准降息等多种货币政策工具，保持流动性充裕。一季度货币政策执行报告强调增强政策前瞻性、灵活性、针对性，加强货币财政政策协同配合。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">国家统计局</div>
+                    <div class="news-title">"十四五"经济社会发展成就系列报告陆续发布</div>
+                    <div class="news-summary">
+                        国家统计局近期连续发布"十四五"经济社会发展成就系列报告，涵盖农业、新型工业化、消费市场、固定资产投资、能源转型、居民收支等多个领域。报告显示，居民消费稳步增长，新型工业化迈出坚实步伐，消费市场持续扩容升级，为"十四五"收官之年奠定良好基础。
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI科技模块 -->
+            <div class="module module-ai">
+                <div class="module-title">🤖 AI · 科技前沿</div>
+
+                <div class="news-item">
+                    <div class="news-source">搜狐科技 · 财联社</div>
+                    <div class="news-title">微软连发七款自研AI模型，正式打破对OpenAI单一依赖格局</div>
+                    <div class="news-summary">
+                        6月初，微软一举发布七款自研MAI系列模型，从<span class="highlight">170亿参数的端侧模型"MAI-Mini"</span>到<span class="highlight">1.8万亿参数的MoE架构旗舰"MAI-Orion"</span>，标志微软正式从"模型采购商"转型为"模型自研商"。MAI-Orion在15项权威基准测试中12项超越GPT-5预览版，推理成本仅为GPT-5预览版的<span class="highlight">38%</span>，引发AI行业定价体系连锁震荡。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">搜狐科技 · 新浪财经</div>
+                    <div class="news-title">OpenAI推出GPT-5预览版并大幅下调API价格；推"模型遗嘱"功能</div>
+                    <div class="news-summary">
+                        OpenAI发布GPT-5预览版，为应对中国DeepSeek的低价冲击，面向开发者市场的API价格下调<span class="highlight">20%-30%</span>。6月11日，OpenAI推出"模型遗嘱"功能：企业客户部署私有化模型时，可设置不可篡改的行为红线，红线嵌入模型权重，后续微调也无法绕过，属于"技术层面的监管内嵌"设计。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">搜狐科技</div>
+                    <div class="news-title">谷歌DeepMind更新Gemini 3.0轻量版与Project Mariner 2.0</div>
+                    <div class="news-summary">
+                        6月10日，谷歌更新Gemini 3.0轻量版，主打多模态实时交互，端侧推理延迟低于<span class="highlight">50毫秒</span>，目标场景为移动设备与IoT终端。6月15日，Project Mariner 2.0发布，核心突破为"跨浏览器多任务并行"能力，可同时操作Chrome浏览器15个标签页，电商、HR场景实测成功率从63%提升至<span class="highlight">82%</span>，并首次引入"可验证推理链"机制。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">微软MSN · 新浪财经</div>
+                    <div class="news-title">人工智能+生态大会（AIEC 2026）今日在北京举行</div>
+                    <div class="news-summary">
+                        人工智能+生态大会（AIEC 2026）于6月16日在北京中关村展示中心举行。大会由清华大学全球产业研究院主办，中关村科学城管委会支持，以"集聚激活生态创新力量、加速推进人工智能落地"为宗旨，汇聚来自清华大学、国企及科技企业的多方资源，系统探索"人工智能+"从战略部署迈向产业实践的方法路径，深度释放重点行业场景的智能化转型潜能。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">新浪财经 · 奥巴马行政令</div>
+                    <div class="news-title">特朗普签署AI行政令，要求AI公司公开发布前30天向政府报备模型</div>
+                    <div class="news-summary">
+                        美国总统特朗普签署行政命令，要求人工智能公司在公开发布功能强大的模型前<span class="highlight">30天</span>，须向政府提供相关模型信息。该命令旨在加强联邦政府对AI技术的监督，要求国家安全和网络官员与顶尖科技公司合作，共同解决由先进AI模型所识别出的软件漏洞。此为特朗普5月21日搁置的先前版本的精简版。
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-source">搜狐科技</div>
+                    <div class="news-title">中国DeepSeek开源第三代MoE模型，API价格仅为微软MAI-Orion的1/15</div>
+                    <div class="news-summary">
+                        中国深度求索（DeepSeek）6月初开源第三代MoE模型DeepSeek-V3，API调用价格仅为每百万tokens输入<span class="highlight">0.28美元</span>，是微软MAI-Orion的1/15，中文数学推理、代码生成任务性能对齐MAI-Orion的95%，直接倒逼OpenAI、Anthropic下调开发者市场API价格。苹果在WWDC宣布Siri秋季深度升级，基于A20仿生芯片与本地大模型，主打"零数据离云"隐私策略。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>本简报内容整理自新华社、央视新闻、人民日报、澎湃新闻、财联社等一手新闻源</p>
+            <p>生成时间：2026年06月16日 08:50 · 由 WorkBuddy AI 自动生成</p>
+        </div>
+    </div>
+</body>
+</html>
