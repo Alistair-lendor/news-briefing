@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻简报 - 2026年6月19日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .date {
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .module {
+            margin-bottom: 50px;
+        }
+        
+        .module-title {
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 8px solid;
+            font-weight: 700;
+        }
+        
+        .module.politics .module-title {
+            border-color: #302b63;
+            color: #302b63;
+        }
+        
+        .module.conflict .module-title {
+            border-color: #8b0000;
+            color: #8b0000;
+        }
+        
+        .module.economy .module-title {
+            border-color: #1b5e20;
+            color: #1b5e20;
+        }
+        
+        .module.technology .module-title {
+            border-color: #0d47a1;
+            color: #0d47a1;
+        }
+        
+        .news-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .module.politics .news-item {
+            border-color: #302b63;
+        }
+        
+        .module.conflict .news-item {
+            border-color: #8b0000;
+        }
+        
+        .module.economy .news-item {
+            border-color: #1b5e20;
+        }
+        
+        .module.technology .news-item {
+            border-color: #0d47a1;
+        }
+        
+        .news-source {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .module.politics .news-source {
+            background: #302b63;
+        }
+        
+        .module.conflict .news-source {
+            background: #8b0000;
+        }
+        
+        .module.economy .news-source {
+            background: #1b5e20;
+        }
+        
+        .module.technology .news-source {
+            background: #0d47a1;
+        }
+        
+        .news-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #222;
+            font-weight: 700;
+        }
+        
+        .news-content {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .original-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: 2px dashed;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .module.politics .original-link {
+            color: #302b63;
+            border-color: #302b63;
+            background: rgba(48, 43, 99, 0.05);
+        }
+        
+        .module.conflict .original-link {
+            color: #8b0000;
+            border-color: #8b0000;
+            background: rgba(139, 0, 0, 0.05);
+        }
+        
+        .module.economy .original-link {
+            color: #1b5e20;
+            border-color: #1b5e20;
+            background: rgba(27, 94, 32, 0.05);
+        }
+        
+        .module.technology .original-link {
+            color: #0d47a1;
+            border-color: #0d47a1;
+            background: rgba(13, 71, 161, 0.05);
+        }
+        
+        .original-link:hover {
+            background: rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .data-table th {
+            background: #1b5e20;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .data-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .data-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .module-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📰 每日新闻简报</h1>
+            <div class="date">2026年6月19日 星期五</div>
+        </div>
+        
+        <div class="content">
+            <!-- 时政模块 -->
+            <div class="module politics">
+                <h2 class="module-title">🏛️ 时政要闻</h2>
+                
+                <div class="news-item">
+                    <span class="news-source">央广网</span>
+                    <h3 class="news-title">习近平对常态化做好东西部协作工作作出重要指示</h3>
+                    <div class="news-content">
+                        <p>习近平总书记对常态化做好东西部协作工作作出重要指示，强调要总结运用闽宁协作等有益经验，不断增强区域发展协调性，推动全体人民共同富裕迈出坚实步伐。</p>
+                        <p>指示指出，东西部协作是党中央着眼推动区域协调发展、促进共同富裕作出的重大决策部署。<span class="highlight">要建立健全长效机制，深化产业合作、资源互补、劳务对接、人才交流</span>，实现优势互补、互利共赢。</p>
+                    </div>
+                    <a href="https://www.cnr.cn/syk/xsxy/index.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">中国新闻网</span>
+                    <h3 class="news-title">中国发布《国家人权行动计划（2026－2030年）》</h3>
+                    <div class="news-content">
+                        <p>在11日举办的"2026·全球人权治理高端论坛"开幕式上，国家人权行动计划联席会议机制成员单位代表共同发布了《国家人权行动计划（2026－2030年）》。</p>
+                        <p>该计划明确了未来五年中国在人权领域的工作重点和目标，涵盖经济、社会、文化权利以及公民权利和政治权利等多个方面。<span class="highlight">计划提出了一系列具体指标和措施，旨在全面提升人权保障水平</span>。</p>
+                    </div>
+                    <a href="https://www.chinanews.com.cn/gn/2026/06-11/10638214.shtml" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">国家发展改革委</span>
+                    <h3 class="news-title">国家发展改革委举行6月份新闻发布会</h3>
+                    <div class="news-content">
+                        <p>6月18日上午，国家发展改革委举行6月份新闻发布会。国家发展改革委政策研究室副主任、委新闻发言人李超出席发布会，介绍2026年全国节能宣传周、贯彻实施民营经济促进法典型案例有关情况。</p>
+                        <p>发布会就算力网、物流网、输电权市场化交易、"两新"政策实施成效、煤炭安全生产供应、中国产业竞争力、"两高"项目管理、综合改革试点经验推广等方面问题，回应媒体关切。<span class="highlight">发言人表示，将继续完善民营企业参与重大项目建设长效机制</span>。</p>
+                    </div>
+                    <a href="https://www.ndrc.gov.cn/xwdt/wszb/6yxwfbh2026/" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+            </div>
+            
+            <!-- 地区冲突模块 -->
+            <div class="module conflict">
+                <h2 class="module-title">⚔️ 地区冲突</h2>
+                
+                <div class="news-item">
+                    <span class="news-source">人民网</span>
+                    <h3 class="news-title">伊朗总统签署伊美谅解备忘录</h3>
+                    <div class="news-content">
+                        <p>2026年6月18日，伊朗总统签署伊美谅解备忘录，为持续数月的军事对抗按下暂停键。公开信息显示，备忘录涉及停止敌对行动、恢复霍尔木兹海峡航运、解除或缓解部分封锁与制裁、释放伊朗被冻结资产。</p>
+                        <p>备忘录为后续围绕伊朗核问题的谈判设定时间窗口。<span class="highlight">国际社会呼吁全面落实美伊谅解备忘录</span>，土耳其外长表示希望美伊后续谈判以建设性方式进行。</p>
+                    </div>
+                    <a href="https://world.people.com.cn/n1/2026/0618/c1002-40742944.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">人民网</span>
+                    <h3 class="news-title">以色列袭击黎巴嫩南部两地致多人死伤</h3>
+                    <div class="news-content">
+                        <p>2026年6月18日，以色列袭击黎巴嫩南部两地，造成多人死伤。黎巴嫩当局提醒逃难者：以军没撤，别着急回家。</p>
+                        <p>以军继续在黎巴嫩南部展开密集军事行动。<span class="highlight">黎巴嫩总统表示，以色列撤军等条件满足才会结束敌对行动</span>。国际社会对中东局势持续关注。</p>
+                    </div>
+                    <a href="https://world.people.com.cn/n1/2026/0618/c1002-40743322.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">新民周刊</span>
+                    <h3 class="news-title">美伊达成备忘录后：阶段性缓和与长期博弈</h3>
+                    <div class="news-content">
+                        <p>2026年6月15日，美国与伊朗宣布达成备忘录。这一安排标志着美国、以色列袭击伊朗引发的危机态势出现阶段性缓和。其重要性不应低估，因为它至少说明各方已经意识到继续升级将带来难以承受的政治、军事、经济和能源安全成本。</p>
+                        <p>但备忘录带来的缓和具有显著的阶段性、条件性和脆弱性。<span class="highlight">它更多是一种危机管控安排，尚未构成稳定和平机制</span>。真正值得关注的，是它揭示出的结构性变化：中东安全不能再由外部军事强权单方面塑造。</p>
+                    </div>
+                    <a href="http://www.xinminweekly.com.cn/guanchajia/2026/06/16/45722.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+            </div>
+            
+            <!-- 经济模块 -->
+            <div class="module economy">
+                <h2 class="module-title">💰 经济动态</h2>
+                
+                <div class="news-item">
+                    <span class="news-source">国家统计局</span>
+                    <h3 class="news-title">2026年5月份CPI同比上涨0.1%，PPI同比下降1.8%</h3>
+                    <div class="news-content">
+                        <p>2026年6月10日，国家统计局发布2026年5月份CPI和PPI数据。5月份，扩内需、促消费政策持续显效，居民消费价格指数(CPI)同比由上月下降转为上涨<span class="highlight">0.1%</span>；环比下降0.1%，降幅比上月收窄0.1个百分点。</p>
+                        <p>工业生产者出厂价格指数(PPI)同比下降<span class="highlight">1.8%</span>，降幅比上月收窄0.3个百分点；环比由上月上涨0.2%转为下降0.1%。扣除食品和能源价格的核心CPI同比上涨0.7%，涨幅比上月扩大0.1个百分点。</p>
+                    </div>
+                    
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>指标</th>
+                                <th>5月同比</th>
+                                <th>5月环比</th>
+                                <th>4月同比</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CPI（居民消费价格指数）</td>
+                                <td style="color: green; font-weight: bold;">+0.1%</td>
+                                <td style="color: red; font-weight: bold;">-0.1%</td>
+                                <td style="color: red; font-weight: bold;">-0.1%</td>
+                            </tr>
+                            <tr>
+                                <td>PPI（工业生产者出厂价格指数）</td>
+                                <td style="color: red; font-weight: bold;">-1.8%</td>
+                                <td style="color: red; font-weight: bold;">-0.1%</td>
+                                <td style="color: red; font-weight: bold;">-2.1%</td>
+                            </tr>
+                            <tr>
+                                <td>核心CPI</td>
+                                <td style="color: green; font-weight: bold;">+0.7%</td>
+                                <td>-</td>
+                                <td style="color: green; font-weight: bold;">+0.6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <a href="https://www.stats.gov.cn/sj/zxfbhjd/202606/t20260610_1963924.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">国家发展改革委</span>
+                    <h3 class="news-title">5月中国经济动能平稳，PMI为50%</h3>
+                    <div class="news-content">
+                        <p>2026年5月中国官方制造业PMI为<span class="highlight">50%</span>，较上月下降0.3个百分点，经济动能平稳。猪肉价格稳定，2026年5月29日至6月4日中国猪肉当周日均价为19.84元/公斤，较上周下降0.10元/公斤。</p>
+                        <p>工业生产方面，主要开工率上涨。2026年6月12日中国高炉当周开工率(247家)为<span class="highlight">84.27%</span>。国家发展改革委表示，将完善民营企业参与重大项目建设长效机制，积极吸引社会资本参与"六张网"建设。</p>
+                    </div>
+                    <a href="https://baijiahao.baidu.com/s?id=1868200577435451493" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">财经媒体</span>
+                    <h3 class="news-title">周五(6月19日)重点关注财经事件和经济数据</h3>
+                    <div class="news-content">
+                        <p>2026年6月19日，全球市场关注以下财经事件和经济数据：</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li><span class="highlight">07:01</span> - 英国6月Gfk消费者信心指数</li>
+                            <li><span class="highlight">07:30</span> - 日本5月核心CPI</li>
+                            <li><span class="highlight">14:00</span> - 德国5月PPI</li>
+                            <li><span class="highlight">20:30</span> - 加拿大4月零售销售月率</li>
+                        </ul>
+                        <p style="margin-top: 10px;">分析师表示，全球经济数据显示通胀压力依然存在，主要经济体货币政策走向值得关注。</p>
+                    </div>
+                    <a href="https://finance.sina.cn/2026-06-19/detail-inicwtfi9925617.d.html" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+            </div>
+            
+            <!-- AI科技模块 -->
+            <div class="module technology">
+                <h2 class="module-title">🤖 AI科技前沿</h2>
+                
+                <div class="news-item">
+                    <span class="news-source">凤凰科技</span>
+                    <h3 class="news-title">突发！谷歌Gemini联席负责人，被OpenAI挖了</h3>
+                    <div class="news-content">
+                        <p>2026年6月19日，科技圈传来重磅消息：谷歌DeepMind研究员、Gemini联席负责人Noam Shazeer已正式加入OpenAI，将担任<span class="highlight">架构研究负责人（Lead for Architecture Research）</span>，负责探索新一代AI模型架构，并推动Transformer架构的进一步演进。</p>
+                        <p>这一人事变动在AI业界引发广泛关注。Noam Shazeer是Transformer架构的核心贡献者之一，他的加入将显著增强OpenAI在基础架构研究方面的实力。分析人士认为，这标志着AI人才争夺战进入新阶段。</p>
+                    </div>
+                    <a href="https://tech.ifeng.com/c/8u3OAmuK26M" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">RayByte</span>
+                    <h3 class="news-title">OpenAI GPT-5正式发布，推理与多模态能力飙升40%</h3>
+                    <div class="news-content">
+                        <p>2026年6月18日，OpenAI正式推出新一代大语言模型GPT-5。其在数学推理、代码生成及跨模态统一理解等核心任务上，性能相比GPT-4 Turbo平均提升超过<span class="highlight">40%</span>。</p>
+                        <p>GPT-5的突破重点在于"复杂推理"和"跨模态统一理解"。官方表示，新模型能够建立更深层次的、共享的语义理解空间，让文本、图像、音频等信息在模型内部被同等对待和关联。这将为教育、医疗、内容创作、工业设计等领域打开全新的自动化与智能化大门。</p>
+                    </div>
+                    <a href="https://raybyte.cn/news/2026-06-19-40-openai-gpt-ai" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+                
+                <div class="news-item">
+                    <span class="news-source">搜狐科技</span>
+                    <h3 class="news-title">GPT-5.6与Mythos 5最新泄露，AI军备竞赛加速</h3>
+                    <div class="news-content">
+                        <p>2026年6月上旬，AI开发者圈同时收到两个重磅泄露信号：OpenAI Codex后端日志短暂暴露GPT-5.6，Anthropic开发者工具中出现Mythos 5踪丝。两个帖子几乎同时在X上刷屏。</p>
+                        <p>迭代速度再次刷新纪录。GPT-5.5发布才一个多月，5.6就已现身；Claude Opus系列还在窗口期，Mythos 5的蛛丝马迹已经从开发者工具中暴露。<span class="highlight">40天一轮迭代，AI军备竞赛彻底白热化</span>。行业观察人士指出，大模型发布周期正在从"年"缩短到"月"。</p>
+                    </div>
+                    <a href="https://www.sohu.com/a/1033861706_121124377" target="_blank" class="original-link">📄 查看原文 →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 每日新闻简报 | 数据来源：新华社、人民网、国家统计局、凤凰科技等</p>
+            <p style="margin-top: 10px; opacity: 0.8;">本简报自动生成，仅供参考</p>
+        </div>
+    </div>
+</body>
+</html>
