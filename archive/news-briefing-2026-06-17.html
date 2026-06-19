@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日新闻简报 - 2026年06月17日</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .email-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+    }
+    /* 头部渐变 */
+    .header {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      padding: 36px 32px 28px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 4px 16px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      color: rgba(255,255,255,0.85);
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .header .subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2px;
+    }
+    .header .quote {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      margin-top: 10px;
+    }
+    /* 模块区 */
+    .section {
+      padding: 24px 32px 8px;
+      border-left: 4px solid #ccc;
+      margin: 0;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title .icon {
+      font-size: 20px;
+    }
+    /* 各模块左边框颜色 */
+    .section-politics   { border-left-color: #302b63; }
+    .section-conflict   { border-left-color: #8b0000; }
+    .section-economy    { border-left-color: #1b5e20; }
+    .section-ai         { border-left-color: #0d47a1; }
+    .section-politics .section-title   { color: #302b63; }
+    .section-conflict .section-title   { color: #8b0000; }
+    .section-economy .section-title    { color: #1b5e20; }
+    .section-ai .section-title         { color: #0d47a1; }
+
+    /* 新闻条目 */
+    .news-item {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-source {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #666;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .news-summary {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.75;
+    }
+    .highlight {
+      background: #fff9c4;
+      padding: 1px 4px;
+      border-radius: 2px;
+      font-weight: 600;
+      color: #333;
+    }
+    /* 经济数据表格 */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+    .data-table th {
+      background: #f5f5f5;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border: 1px solid #e0e0e0;
+    }
+    .data-table td {
+      padding: 7px 10px;
+      border: 1px solid #e0e0e0;
+      color: #444;
+    }
+    .data-table tr:nth-child(even) td {
+      background: #fafafa;
+    }
+    .data-up { color: #c62828; font-weight: 600; }
+    .data-down { color: #2e7d32; font-weight: 600; }
+    /* 分隔线 */
+    .divider {
+      height: 1px;
+      background: #e8e8e8;
+      margin: 0 32px;
+    }
+    /* 底部 */
+    .footer {
+      background: #f7f7f9;
+      padding: 20px 32px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer a { color: #666; text-decoration: none; }
+    @media (max-width: 600px) {
+      .section { padding: 18px 16px 4px; }
+      .header { padding: 28px 16px 22px; }
+      .header h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="email-wrapper">
+
+  <!-- 头部 -->
+  <div class="header">
+    <div class="header-tag">DAILY BRIEFING</div>
+    <h1>每日新闻简报</h1>
+    <div class="subtitle">2026年06月17日 · 星期三</div>
+    <div class="quote">「 10分钟读完今日全球要闻 」</div>
+  </div>
+
+  <!-- 模块一：时政 -->
+  <div class="section section-politics">
+    <div class="section-title"><span class="icon">🏛️</span> 时政要闻</div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 央视新闻</div>
+      <div class="news-title">习近平同缅甸总统敏昂莱举行会谈</div>
+      <div class="news-summary">
+        6月16日，国家主席习近平在北京人民大会堂同来华进行国事访问的缅甸总统敏昂莱举行会谈。双方就中缅双边关系及地区合作深入交换意见。同日，第一期全军高级干部培训班在国防大学结业，中央军委副主席张升民出席结业式并讲话。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">国家统计局 · 2026-06-16</div>
+      <div class="news-title">5月份国民经济运行总体平稳，向新向优特征明显</div>
+      <div class="news-summary">
+        国家统计局公布数据显示，5月份规模以上工业增加值同比增长<span class="highlight">4.5%</span>，服务业生产指数增长<span class="highlight">4.4%</span>，增速均较4月加快。高技术制造业增加值增速达<span class="highlight">15.1%</span>，装备制造业贡献率接近八成。5月社会消费品零售总额同比下降<span class="highlight">0.6%</span>，CPI同比上涨<span class="highlight">1.2%</span>。1-5月全国固定资产投资同比下降<span class="highlight">4.1%</span>，房地产开发投资下降<span class="highlight">16.2%</span>。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">国防部 · 2026-06-16</div>
+      <div class="news-title">国防部回应美方查封中国互联网域名：完全是无中生有</div>
+      <div class="news-summary">
+        针对美方宣布查封疑似中国情报部门用来获取信息的互联网域名，国防部新闻发言人陈曦大校回应称，所谓"中国间谍威胁"完全是捕风捉影、别有用心的捏造，中方对此坚决反对。中方敦促美方停止滥用国家安全概念，停止无理打压中国企业和公民。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">应急管理部 · 央视新闻</div>
+      <div class="news-title">青海海西州发生6.3级地震，国家启动四级应急响应</div>
+      <div class="news-summary">
+        6月16日17时06分，青海省海西蒙古族藏族自治州发生<span class="highlight">6.3级</span>地震。国务院抗震救灾指挥部办公室、应急管理部立即启动国家地震灾害四级应急响应，派出工作组赶赴当地指导处置。青海省军区、武警青海总队迅即出动百余名救援人员投入抢险救援。国家防灾减灾救灾委员会向青海省调拨<span class="highlight">1万件</span>中央救灾物资。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">教育部 · 2026-06-17</div>
+      <div class="news-title">高考志愿填报官方工具升级上线，面向全国考生免费开放</div>
+      <div class="news-summary">
+        教育部"阳光志愿"信息服务系统升级上线，涵盖志愿参考服务、院校查询、专业查询、生涯发展测评、职业前景、报考指南六大核心功能，面向全国考生免费开放。多所"双一流"高校已明确本科招生扩招计划，上海交通大学、北京航空航天大学、南京大学等均在扩招之列。
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 模块二：地区冲突 -->
+  <div class="section section-conflict">
+    <div class="section-title"><span class="icon">🔥</span> 地区冲突</div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 路透社</div>
+      <div class="news-title">美伊签署停战谅解备忘录，谈判进入第二阶段</div>
+      <div class="news-summary">
+        6月14日，美国与伊朗宣布达成停战谅解备忘录，双方将于<span class="highlight">6月19日在瑞士</span>正式签署并启动为期60天的进一步谈判。美国总统特朗普16日称，美伊已成功在线上签署谅解备忘录，谈判已进入"更容易"的第二阶段，霍尔木兹海峡有望全面重开。伊朗外长阿拉格齐表示，第一阶段讨论结束战事、开放海峡等议题，第二阶段将讨论伊朗核问题及解除对伊制裁。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">CNN · 伊朗塔斯尼姆通讯社</div>
+      <div class="news-title">以色列在黎巴嫩违反停火协议84次，以军空袭计划被美方叫停</div>
+      <div class="news-summary">
+        伊朗武装部队哈塔姆安比亚中央总部发布声明称，在美伊达成谅解备忘录之后，以色列军队已在黎巴嫩南部违反停火协议<span class="highlight">84次</span>，并继续对黎巴嫩无辜民众实施屠杀。另据CNN报道，以军曾计划对伊朗发动大规模空袭，但在行动前约一小时被美方叫停。美方拒绝向以色列提供美伊谅解备忘录文本，理由是担心内塔尼亚胡提前泄露内容。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">G7峰会 · 2026-06-15</div>
+      <div class="news-title">特朗普与普京、泽连斯基分别通话，俄乌和谈出现新信号</div>
+      <div class="news-summary">
+        美国总统特朗普在出席G7峰会期间表示，他与前一日与俄罗斯总统普京、乌克兰总统泽连斯基分别通话，两人愿意就解决乌克兰危机"采取行动"，美国接下来将把重心转向俄乌问题。普京此前在圣彼得堡经济论坛表示俄罗斯"做好了做出妥协的准备"，泽连斯基随即提议与普京进行面对面会晤。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">乌军总参谋部 · 2026-06-08</div>
+      <div class="news-title">乌军2026年已收复超600平方公里领土，战局现拐点</div>
+      <div class="news-summary">
+        乌克兰武装部队总司令瑟尔斯基发布5月战场总结，宣布自2026年初以来，乌军累计从俄军手中夺回超<span class="highlight">600平方公里</span>领土，其中5月单月净收复面积达<span class="highlight">100平方公里</span>，实现了自2023年大反攻失利以来的首次持续领土净增长。俄乌冲突已进入第五年，双方均显疲态，国际社会对和谈预期升温。
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 模块三：经济 -->
+  <div class="section section-economy">
+    <div class="section-title"><span class="icon">📊</span> 经济动态</div>
+
+    <div class="news-item">
+      <div class="news-source">国家统计局 · 2026-06-10/16</div>
+      <div class="news-title">5月CPI同比上涨1.2%，PPI同比上涨3.9%，物价总体平稳</div>
+      <div class="news-summary">
+        5月份，居民消费价格指数（CPI）环比下降低<span class="highlight">0.1%</span>、同比上涨<span class="highlight">1.2%</span>，核心CPI同比上涨<span class="highlight">1.1%</span>。工业生产者出厂价格指数（PPI）环比上涨<span class="highlight">0.5%</span>、同比上涨<span class="highlight">3.9%</span>，涨幅较上月扩大1.1个百分点。汽油价格同比涨幅扩大至<span class="highlight">23.5%</span>，黄金饰品价格同比上涨<span class="highlight">39.0%</span>。AI相关需求旺盛带动移动电话机和平板电脑价格分别上涨1.6%和1.1%。
+      </div>
+    </div>
+
+    <!-- 数据表格 -->
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>指标</th>
+          <th>5月当月同比</th>
+          <th>1-5月累计/备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>规模以上工业增加值</td><td class="data-up">+4.5%</td><td>累计 +5.4%</td></tr>
+        <tr><td>高技术制造业增加值</td><td class="data-up">+15.1%</td><td>明显快于整体工业</td></tr>
+        <tr><td>服务业生产指数</td><td class="data-up">+4.4%</td><td>累计 +4.8%</td></tr>
+        <tr><td>社会消费品零售总额</td><td class="data-down">-0.6%</td><td>—</td></tr>
+        <tr><td>CPI（居民消费价格）</td><td class="data-up">+1.2%</td><td>1-5月核心CPI +1.1%</td></tr>
+        <tr><td>PPI（工业出厂价格）</td><td class="data-up">+3.9%</td><td>累计 +1.0%</td></tr>
+        <tr><td>固定资产投资</td><td>—</td><td class="data-down">累计 -4.1%</td></tr>
+        <tr><td>房地产开发投资</td><td>—</td><td class="data-down">累计 -16.2%</td></tr>
+        <tr><td>货物进出口总额</td><td class="data-up">+16.9%</td><td>累计 +15.3%</td></tr>
+        <tr><td>全国城镇调查失业率</td><td colspan="2">5.1%（较上月下降0.1个百分点）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="news-item">
+      <div class="news-source">日本央行 · 2026-06-16</div>
+      <div class="news-title">日本央行加息至1.0%，为31年来最高水平</div>
+      <div class="news-summary">
+        日本央行在货币政策会议上决定将政策利率自<span class="highlight">0.75%上调至1.0%</span>，为31年来最高利率水平，标志着其货币政策正常化进程中的又一里程碑。此举旨在抑制伊朗战争引发的能源冲击所带来的价格压力。与此同时，瑞银最新预计美联储将在2027年3月和6月各降息25个基点，较此前预测明显推迟。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">国家发改委 · 2026-06-16</div>
+      <div class="news-title">发改委主持召开座谈会，推进"六张网"建设</div>
+      <div class="news-summary">
+        国家发展改革委主任郑栅洁主持召开座谈会，围绕系统推进"六张网"建设听取企业意见建议。郑栅洁表示，希望企业坚定发展信心、抓住发展机遇，积极参与"六张网"和重点基础设施建设。下一步，国家发展改革委将加强"六张网"规划建设，在建设强大国内市场中发挥更大作用。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">中债登 · 2026-06-16</div>
+      <div class="news-title">中债登进一步降低做市商交易结算费用，7月1日起生效</div>
+      <div class="news-summary">
+        中债登发布通知，决定将做市商通过做市成交的现券交易结算服务费由现行8折进一步降低至<span class="highlight">7.5折</span>，优惠措施自2026年7月1日起正式生效，有效期至2028年12月31日。此举旨在进一步降低做市商交易结算成本，促进债券市场流动性提升。
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 模块四：AI科技 -->
+  <div class="section section-ai">
+    <div class="section-title"><span class="icon">🤖</span> AI & 科技</div>
+
+    <div class="news-item">
+      <div class="news-source">金融时报 · AI早报</div>
+      <div class="news-title">OpenAI财务数据曝光：2025年营收131亿美元，亏损385亿美元</div>
+      <div class="news-summary">
+        据经审计的财务文件显示，OpenAI在2025年营收达到<span class="highlight">130.7亿美元</span>，较2024年的37亿美元增长超过三倍；但总成本和支出高达340亿美元，净亏损<span class="highlight">385亿美元</span>。其中研发支出191.8亿美元，销售和市场营销支出57.3亿美元。目前该公司正推进上市计划，上市后整体估值有望突破<span class="highlight">1万亿美元</span>。各路资本仍持续为其巨额开销买单。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">IT之家 · 谷歌官方</div>
+      <div class="news-title">谷歌正式推送Android 17，将Gemini大模型深度融入全系统</div>
+      <div class="news-summary">
+        谷歌于当地时间6月16日正式推送Android 17正式版，同时发布Wear OS 7。本次新版系统将率先搭载于Pixel系列设备，深度集成Gemini大模型，支持音乐生成模型Lyria 3、多模态大模型Gemini Omni，以及适配Pixel 10a的语音翻译工具。Android 17主打全新一代AI模型，将Gemini融入内容创作、即时沟通与各类设备使用场景。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">财联社 · 路透社</div>
+      <div class="news-title">微软考虑采用DeepSeek V4等开源模型，解决"AI太贵"问题</div>
+      <div class="news-summary">
+        全球云计算巨头微软正在将其智能体产品Copilot Cowork转向"按使用量计费"模式，并正在考虑采用<span class="highlight">DeepSeek V4</span>等开源模型，以解决AI算力成本过高的问题。作为背景，微软Copilot、Anthropic的Claude Code以及OpenAI的Codex等智能代理工具在执行任务时会产生巨额算力开销，越来越多AI供应商开始按"使用量计费"。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">财联社 · 2026-06-16</div>
+      <div class="news-title">AI版"支付宝"正式发布，命名为"阿宝"</div>
+      <div class="news-summary">
+        6月16日，AI版支付宝正式发布，产品命名为"阿宝"。该产品旨在为AI智能体提供安全、便捷的支付能力，使AI可以在获得用户授权的情况下完成各类交易操作。这是国内首个面向AI智能体生态的支付产品，标志着AI从"聊天工具"向"行动代理"迈出了关键一步。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">IEEE Communications · 韩国ETRI</div>
+      <div class="news-title">韩国开发出AI驱动的6G核心网络技术，会话处理效率提升40%</div>
+      <div class="news-summary">
+        据最新一期《IEEE通讯》杂志报道，韩国电子通信研究院（ETRI）研究团队开发出一种由人工智能驱动的6G核心网络关键技术，实现了网络对业务连接与资源调度的自主控制，使会话处理效率较传统架构提升约<span class="highlight">40%</span>。该技术被认为是6G网络智能化的重要里程碑，预计将加速6G标准制定进程。
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer">
+    <div>数据来源：新华社 · 央视新闻 · 国家统计局 · 金融时报 · 财联社 · 澎湃新闻 · IT之家</div>
+    <div style="margin-top:6px;">本简报由 AI 自动生成，内容仅供参考</div>
+    <div style="margin-top:4px;">© 2026 每日新闻简报 · <a href="mailto:lendorlee@gmail.com">反馈建议</a></div>
+  </div>
+
+</div>
+</body>
+</html>
