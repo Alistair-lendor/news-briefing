@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日新闻简报 - 2026年6月15日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f6fa; color: #222; line-height: 1.8; }
+  
+  /* 头部 */
+  .header { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); color: #fff; padding: 40px 32px 32px; text-align: center; }
+  .header .date { font-size: 14px; color: rgba(255,255,255,0.6); letter-spacing: 2px; margin-bottom: 8px; }
+  .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 3px; }
+  .header .subtitle { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 8px; }
+  
+  /* 容器 */
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px 48px; }
+  
+  /* 模块 */
+  .module { background: #fff; border-radius: 12px; margin-bottom: 24px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .module-header { padding: 16px 20px; display: flex; align-items: center; gap: 10px; }
+  .module-header .icon { font-size: 20px; }
+  .module-header h2 { font-size: 17px; font-weight: 700; }
+  .module-header .count { margin-left: auto; font-size: 12px; color: #999; background: #f0f0f0; padding: 2px 10px; border-radius: 20px; }
+  
+  /* 各模块左边框颜色 */
+  .module-politics { border-left: 5px solid #302b63; }
+  .module-politics .module-header { background: #f8f7ff; }
+  .module-politics .module-header h2 { color: #302b63; }
+  
+  .module-conflict { border-left: 5px solid #8b0000; }
+  .module-conflict .module-header { background: #fff5f5; }
+  .module-conflict .module-header h2 { color: #8b0000; }
+  
+  .module-economy { border-left: 5px solid #1b5e20; }
+  .module-economy .module-header { background: #f5fef6; }
+  .module-economy .module-header h2 { color: #1b5e20; }
+  
+  .module-ai { border-left: 5px solid #0d47a1; }
+  .module-ai .module-header { background: #f5f8ff; }
+  .module-ai .module-header h2 { color: #0d47a1; }
+  
+  /* 新闻条目 */
+  .news-item { padding: 16px 20px; border-top: 1px solid #f0f0f0; }
+  .news-item:first-child { border-top: none; }
+  .news-source { display: inline-block; font-size: 11px; color: #888; background: #f5f5f5; padding: 1px 8px; border-radius: 4px; margin-bottom: 6px; }
+  .news-title { font-size: 15px; font-weight: 700; color: #222; margin-bottom: 6px; }
+  .news-summary { font-size: 13.5px; color: #555; line-height: 1.9; }
+  .highlight { background: #fff9c4; padding: 0 3px; border-radius: 2px; color: #333; font-weight: 500; }
+  
+  /* 经济数据表格 */
+  .data-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+  .data-table th { background: #f0faf1; color: #1b5e20; padding: 8px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #c8e6c9; }
+  .data-table td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .up { color: #d32f2f; font-weight: 600; }
+  .down { color: #388e3c; font-weight: 600; }
+  
+  /* 底部 */
+  .footer { text-align: center; padding: 24px; color: #aaa; font-size: 12px; }
+  .footer a { color: #302b63; text-decoration: none; }
+  
+  /* 分隔线 */
+  .divider { height: 1px; background: linear-gradient(to right, transparent, #ddd, transparent); margin: 8px 20px; }
+  
+  /* 提示框 */
+  .note-box { background: #fffde7; border: 1px solid #fff9c4; border-radius: 8px; padding: 12px 16px; margin: 12px 20px; font-size: 12.5px; color: #827717; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+  <div class="date">二〇二六年 六月十五日 · 星期日</div>
+  <h1>每 日 新 闻 简 报</h1>
+  <div class="subtitle">新华社 · 人民日报 · 央视新闻 · 澎湃新闻 · 新浪财经 · IT之家</div>
+</div>
+
+<div class="container">
+
+  <!-- 时政模块 -->
+  <div class="module module-politics">
+    <div class="module-header">
+      <span class="icon">🏛️</span>
+      <h2>时政要闻</h2>
+      <span class="count">5 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月11日</div>
+      <div class="news-title">国务院常务会议审议通过《美丽中国建设"十五五"规划》</div>
+      <div class="news-summary">
+        "十五五"时期被明确为美丽中国建设承上启下、实现生态环境根本好转的关键时期。会议部署深入打好<span class="highlight">蓝天、碧水、净土保卫战</span>，全面实施固体废物和新污染物治理行动，积极应对气候变化。专家解读指出，美丽中国建设需强化多主体协同，完善市场激励、科技支撑、标准引导制度，推动全民共建。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月11日</div>
+      <div class="news-title">国务院常务会议审议通过《教育发展"十五五"规划》</div>
+      <div class="news-summary">
+        会议强调加快建设教育强国，推动教育质量全面提升，重点推进义务教育优质均衡发展、高等教育创新发展及职业教育提质升级。规划对"十五五"期间教育现代化建设作出系统部署，明确到规划期末的关键发展指标与重点任务。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月8日</div>
+      <div class="news-title">三峡水运新通道正式开工，打造世界最大"水上楼梯"</div>
+      <div class="news-summary">
+        三峡水运新通道项目正式开工建设，项目建成后将成为世界最大的内河通航建筑物，可满足<span class="highlight">万吨级轮船</span>通航需求。新通道建设是落实国家重大战略、打通长江黄金水道瓶颈的关键工程，对推动长江经济带高质量发展具有重要意义。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月9日</div>
+      <div class="news-title">《数字中国发展报告（2025年）》全文正式发布</div>
+      <div class="news-summary">
+        国家数据局发布《数字中国发展报告（2025年）》，全面总结2025年我国数字中国建设取得的成效。报告显示，我国数字经济规模持续扩大，数字基础设施更加完善，数据要素价值加快释放，数字政府建设深入推进。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月8日</div>
+      <div class="news-title">国家网信办、市场监管总局联合印发《网络测评活动规范》</div>
+      <div class="news-summary">
+        为规范网络测评活动秩序，保护消费者合法权益，国家网信办与市场监管总局联合制定《网络测评活动规范》并于6月8日正式印发。规范对网络测评内容的客观性、真实性提出明确要求，禁止虚假测评和误导性宣传，将于近期正式实施。
+      </div>
+    </div>
+  </div>
+
+  <!-- 地区冲突模块 -->
+  <div class="module module-conflict">
+    <div class="module-header">
+      <span class="icon">🔥</span>
+      <h2>地区冲突</h2>
+      <span class="count">3 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">中国新闻网 · 2026年6月12日</div>
+      <div class="news-title">伊朗宣布关闭霍尔木兹海峡，特朗普临阵取消军事打击计划</div>
+      <div class="news-summary">
+        6月11日凌晨，伊朗宣布正式关闭<span class="highlight">霍尔木兹海峡</span>，警告所有试图通过海峡的船只"都将受到攻击"。此举引发国际能源市场剧烈波动，油价大幅上涨。6月12日凌晨，美国总统特朗普突然宣布取消原定当晚对伊朗的打击计划，称双方磋商已获伊朗最高层批准。分析人士指出，特朗普政府考量国内通胀（5月CPI同比上涨<span class="highlight">4.2%</span>，创三年来新高）及中期选举压力，急于推动谈判落地。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">腾讯新闻 · 2026年6月8日</div>
+      <div class="news-title">美伊停火协议名存实亡，以色列持续空袭黎巴嫩南部</div>
+      <div class="news-summary">
+        截至6月8日，美伊临时停火协议已生效两月，但执行屡遭重大阻力。过去48小时内，伊朗用弹道导弹打击以色列北部空军基地，以色列持续空袭黎巴嫩南部，美军与伊朗在霍尔木兹海峡再度发生摩擦。停火协议本应是中东局势缓和节点，但多线冲突同步爆发，地区和平再陷危机。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">财新国际 · 2026年6月5日</div>
+      <div class="news-title">普京表态愿和谈，泽连斯基提议两国元首直接会晤</div>
+      <div class="news-summary">
+        6月4日，俄罗斯总统普京在圣彼得堡国际经济论坛公开释放妥协信号，表示俄方完全准备好在安克雷奇会晤基础上通过和平方式解决俄乌全部争端。同日，乌克兰总统泽连斯基向普京发出公开信，提议两国领导人直接会晤以推动冲突结束。这是俄乌开战四年来首次同时出现双方和谈信号，为冲突政治解决带来一线希望。
+      </div>
+    </div>
+  </div>
+
+  <!-- 经济模块 -->
+  <div class="module module-economy">
+    <div class="module-header">
+      <span class="icon">📊</span>
+      <h2>经济动态</h2>
+      <span class="count">3 条</span>
+    </div>
+
+    <div class="note-box">
+      📌 国家统计局于6月10日发布2026年5月份CPI和PPI数据，因具体数值未在公开摘要中完整呈现，建议访问 <a href="https://www.stats.gov.cn" style="color:#1b5e20;">stats.gov.cn</a> 查阅官方全文。以下为市场相关动态汇总。
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">国家统计局 · 2026年6月10日</div>
+      <div class="news-title">5月CPI、PPI数据发布，物价走势备受关注</div>
+      <div class="news-summary">
+        国家统计局城市司首席统计师董莉娟对2026年5月份CPI和PPI数据进行解读。据市场机构此前预测，5月CPI同比有望延续温和回升态势，预计同比上涨约<span class="highlight">0.8%</span>左右；PPI受国际能源价格波动影响，同比降幅有望进一步收窄，或于二季度前后实现同比转正。投资者可关注国家统计局官网发布的完整数据解读。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新华社 · 2026年6月5日</div>
+      <div class="news-title">"十四五"经济社会发展成就系列报告陆续发布</div>
+      <div class="news-summary">
+        国家统计局自6月4日起连续发布"十四五"经济社会发展成就系列报告，涵盖农业、工业、服务业、消费、投资、能源转型等多个领域。报告显示，五年来我国<span class="highlight">新型工业化</span>迈出坚实步伐，新质生产力积蓄强劲动力，消费市场扩容升级，固定资产投资结构不断优化，为"十五五"开局奠定坚实基础。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">央视财经 · 2026年6月12日</div>
+      <div class="news-title">霍尔木兹海峡封锁冲击全球能源市场，油价剧烈波动</div>
+      <div class="news-summary">
+        受伊朗宣布关闭霍尔木兹海峡影响，国际油价一度大幅上涨。随后特朗普宣布取消对伊军事打击计划，截至6月12日10时，美油主力合约跌<span class="highlight">1.09%</span>，布油主力合约回撤<span class="highlight">1.17%</span>。分析人士指出，霍尔木兹海峡承载全球约20%的石油运输量，任何封锁行动都将对全球能源供应链产生重大冲击。
+      </div>
+    </div>
+  </div>
+
+  <!-- AI科技模块 -->
+  <div class="module module-ai">
+    <div class="module-header">
+      <span class="icon">🤖</span>
+      <h2>AI 科技</h2>
+      <span class="count">5 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新浪科技 · 2026年6月12日</div>
+      <div class="news-title">GPT-5.6即将发布，OpenAI考虑大幅降价应对竞争</div>
+      <div class="news-summary">
+        OpenAI首席科学家Jakub Pachocki确认<span class="highlight">GPT-5.6</span>相比GPT-5.5有"实质性提升"，内部代号<code>iris-alpha</code>的模型上下文窗口约<span class="highlight">150万token</span>，较GPT-5.5提升50%。面对Anthropic Claude Fable 5在编程榜单上的领先优势（SWE-bench Pro得分80.3% vs GPT-5.5的58.6%），OpenAI正考虑大幅降低token定价，计划在Anthropic降价前率先出手，"让用户花更少的钱，获得更大的价值"。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">新浪财经 · 2026年6月10日</div>
+      <div class="news-title">OpenAI与Anthropic竞速IPO，双雄估值逼近万亿美元</div>
+      <div class="news-summary">
+        Anthropic估值已达约<span class="highlight">9650亿美元</span>，OpenAI估值约<span class="highlight">8520亿美元</span>，Anthropic首次在估值上超越OpenAI。OpenAI已秘密递交S-1招股书，由高盛和摩根士丹利承销，原计划IPO窗口期为2026年9月-11月。Anthropic则主打"安全优先"路线，其Claude系列模型以高可靠性获得企业客户认可。Sam Altman表示，算力成本已是用户核心痛点，OpenAI将推动AI普惠化。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">澎湃新闻 · 2026年6月3日</div>
+      <div class="news-title">微软Build 2026：发布MAI系列7款自研模型，全面转向"智能体时代"</div>
+      <div class="news-summary">
+        在年度Build 2026开发者大会上，微软宣布全面转向"智能体时代"，发布<span class="highlight">MAI系列共7款自研模型</span>。其中旗舰推理模型<code>MAI-Thinking-1</code>为中等规模稀疏MoE架构，350亿活跃参数、总参数量约1万亿，AIME 2025测试得分<span class="highlight">97.0%</span>，完全基于干净数据从头训练。微软CEO纳德拉表示："企业不应再只是单纯消费前沿模型，而应当全面参与到前沿模型生态系统的建设之中。"
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">IT之家 · 2026年6月11日</div>
+      <div class="news-title">OpenAI秘密提交IPO申请，Sam Altman预估"明年内"上市</div>
+      <div class="news-summary">
+        OpenAI于6月8日正式向美国SEC秘密提交IPO申请，推进进军公开股票市场的计划。Sam Altman在内部邮件中预估公司将在"明年内"上市，但具体时间表仍具灵活性。面向员工的股权回购即将启动，每股定价<span class="highlight">687.69美元</span>。此外，OpenAI正谈判租赁俄亥俄州一座10GW数据中心园区，建成成本至少5000亿美元，英伟达承诺最高投入1000亿美元。
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-source">每日经济新闻 · 2026年6月9日</div>
+      <div class="news-title">苹果WWDC 2026：库克"最后一舞"，Siri AI功能终于补课</div>
+      <div class="news-summary">
+        苹果在WWDC 2026上发布全新Siri AI功能，终于补齐拖了两年的AI助手短板。与此同时，亚马逊与光纤制造商康宁达成数十亿美元长期合作协议，支持其美国数据中心扩建项目，将在北卡罗来纳州新增1000个制造业岗位。科技巨头围绕AI基础设施的军备竞赛持续升温。
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 底部 -->
+<div class="footer">
+  <p>每日新闻简报 · 由 WorkBuddy AI 自动生成</p>
+  <p style="margin-top:6px;">数据来源：新华社 · 人民日报 · 央视新闻 · 中国新闻网 · 澎湃新闻 · 新浪财经 · 国家统计局 · IT之家</p>
+  <p style="margin-top:6px; color:#ccc;">2026年6月15日 09:00 自动推送</p>
+</div>
+
+</body>
+</html>
