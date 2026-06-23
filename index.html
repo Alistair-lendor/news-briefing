@@ -1,315 +1,369 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>简报 · Alistair</title>
-<style>
-@font-face{font-family:'Geist';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/font/geist-sans/Geist-Variable.woff2') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Geist Mono';src:url('https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/font/geist-mono/GeistMono-Variable.woff2') format('woff2');font-weight:100 900;font-display:swap}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Briefing · 2026年6月23日</title>
+  <link rel="preconnect" href="https://api.fonts.coollabs.io">
+  <link href="https://api.fonts.coollabs.io/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #171717;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; text-decoration-color: rgba(0,0,0,0.3); text-underline-offset: 3px; }
 
-:root{
-  --bg:#ffffff; --fg:#171717; --fg2:#4d4d4d; --fg3:#666666; --fg4:#808080;
-  --line:#ebebeb; --surface:#fafafa;
-  --f:'Geist',Arial,sans-serif;
-  --fm:'Geist Mono',ui-monospace,monospace;
-  --font-features:"liga","tnum";
-  --shadow-border:0px 0px 0px 1px rgba(0,0,0,0.08);
-  --shadow-elevation:0px 2px 2px rgba(0,0,0,0.04);
-  --shadow-ambient:0px 8px 8px -8px rgba(0,0,0,0.04);
-  --shadow-glow:#fafafa 0px 0px 0px 1px;
-  --shadow-card:var(--shadow-border), var(--shadow-elevation), var(--shadow-ambient), var(--shadow-glow);
-  --shadow-divider:0px 1px 0px 0px rgba(0,0,0,0.08);
-  --focus:hsla(212,100%,48%,1);
-  --selection:hsla(0,0%,95%,1);
-}
-@media(prefers-color-scheme:dark){
-  :root{
-    --bg:#000000; --fg:#ededed; --fg2:#888888; --fg3:#666666; --fg4:#555555;
-    --line:#222222; --surface:#111111;
-    --shadow-border:0px 0px 0px 1px rgba(255,255,255,0.08);
-    --shadow-elevation:0px 2px 2px rgba(255,255,255,0.04);
-    --shadow-ambient:0px 8px 8px -8px rgba(255,255,255,0.04);
-    --shadow-glow:#111111 0px 0px 0px 1px;
-    --shadow-divider:0px 1px 0px 0px rgba(255,255,255,0.08);
-  }
-}
-*{margin:0;padding:0;box-sizing:border-box}
-*{font-feature-settings:var(--font-features)}
-::selection{background:var(--selection)}
-html{scroll-behavior:smooth}
-html,body{height:100%}
-body{
-  font-family:var(--f); background:var(--bg); color:var(--fg);
-  -webkit-font-smoothing:antialiased; line-height:1.5;
-  max-width:520px; margin:0 auto; padding:0 20px;
-}
-:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
-a{color:inherit;text-decoration:none}
+    /* Page container */
+    .page {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
 
-/* ── Header ── */
-.hdr{display:flex;align-items:baseline;justify-content:space-between;padding:28px 0 20px;gap:12px}
-.hdr-l{font-size:1.5rem;font-weight:600;letter-spacing:-0.96px;line-height:1.2;color:var(--fg);transition:opacity .12s}
-.hdr-l:hover{opacity:.5}
-.hdr-r{font-size:.82rem;font-weight:400;color:var(--fg3);font-family:var(--fm);letter-spacing:-0.02em;white-space:nowrap}
+    /* Header */
+    .header {
+      padding: 48px 0 0;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .header-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #171717;
+    }
+    .header-date {
+      font-family: 'Geist Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: #808080;
+      letter-spacing: -0.02em;
+    }
 
-/* ── Tab Nav ── */
-.tab-wrap{overflow-x:auto;white-space:nowrap;padding:0 0 16px;margin-bottom:4px;-webkit-overflow-scrolling:touch}
-.tab-wrap::-webkit-scrollbar{display:none}
-.tab{display:inline-block;padding:6px 16px;margin-right:8px;font-size:.82rem;font-weight:500;
-  color:var(--fg3);background:transparent;border-radius:8px;
-  box-shadow:var(--shadow-border);transition:all .12s;
-  cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
-.tab:hover{color:var(--fg);background:var(--surface)}
-.tab:active{opacity:.7}
-.tab.on{color:var(--fg);background:var(--fg);color:#fff}
+    /* Divider */
+    .divider {
+      box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.08);
+      margin: 20px 0;
+    }
 
-/* ── Section ── */
-.sc{padding:16px 0}
-.sc-hd{display:flex;align-items:baseline;margin-bottom:20px}
-.sc-l{font-size:.82rem;font-weight:500;color:var(--fg3);letter-spacing:.04em;text-transform:uppercase}
-.sc-c{font-size:.68rem;color:var(--fg4);margin-left:8px;font-family:var(--fm)}
+    /* Tab navigation */
+    .tab-nav {
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+    .tab-nav::-webkit-scrollbar { display: none; }
+    .tab-item {
+      flex-shrink: 0;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #808080;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .tab-item:hover { color: #171717; }
+    .tab-item.active { color: #171717; box-shadow: inset 0 -1px 0 #171717; }
 
-/* ── News Item ── */
-.ni{padding:14px 0;box-shadow:var(--shadow-divider)}
-.ni:last-child{box-shadow:none}
-.ni-h{font-size:1rem;font-weight:550;color:var(--fg);letter-spacing:-0.48px;line-height:1.4;margin-bottom:6px}
-.ni-h a{color:var(--fg);transition:all .12s}
-.ni-h a:hover{opacity:.5}
-.ni-m{display:flex;align-items:center;gap:12px;font-size:.72rem;color:var(--fg4);font-family:var(--fm);letter-spacing:-0.02em}
-.ni-src{color:var(--fg3);box-shadow:var(--shadow-border);padding:1px 8px;border-radius:4px;font-size:.68rem;transition:all .12s}
-.ni-src:hover{opacity:.5}
-.ni-tag{font-size:.68rem;color:var(--fg4);padding:1px 6px;border-radius:4px;background:var(--surface)}
+    /* Section */
+    .section {
+      padding: 36px 0 0;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #808080;
+      margin-bottom: 20px;
+    }
 
-/* ── Footer ── */
-.ft{text-align:center;padding:40px 0 48px;font-size:.72rem;color:var(--fg4);letter-spacing:-0.02em}
-.ft a{color:var(--fg3);transition:opacity .12s}
-.ft a:hover{opacity:.5}
-</style>
+    /* News item */
+    .news-item {
+      padding: 16px 0;
+      box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.06);
+    }
+    .news-item:last-child { box-shadow: none; }
+    .news-title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.5;
+      color: #171717;
+      letter-spacing: -0.01em;
+    }
+    .news-title:hover { color: #4d4d4d; }
+    .news-meta {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #999999;
+      font-family: 'Geist Mono', monospace;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    .news-source {
+      color: #808080;
+    }
+
+    /* Back link */
+    .back-link {
+      display: block;
+      padding: 40px 0 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666666;
+      letter-spacing: -0.01em;
+    }
+    .back-link:hover { color: #171717; }
+
+    /* Anchor targets */
+    .anchor { scroll-margin-top: 20px; }
+
+    @media (max-width: 520px) {
+      .page { padding: 0 16px 80px; }
+      .header-title { font-size: 24px; }
+      .tab-nav { margin: 0 -16px; padding: 0 16px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-row">
+        <div class="header-title">Briefing</div>
+        <div class="header-date">2026.06.23</div>
+      </div>
+    </div>
 
-<div class="hdr">
-  <a href="https://alistairlendor.com" class="hdr-l">Briefing</a>
-  <span class="hdr-r" id="d"></span>
-</div>
+    <div class="divider"></div>
 
-<div class="tab-wrap" id="tabs">
-  <a class="tab on" href="#s-ai">AI</a>
-  <a class="tab" href="#s-tech">科技</a>
-  <a class="tab" href="#s-politics">时政</a>
-  <a class="tab" href="#s-economy">经济</a>
-  <a class="tab" href="#s-world">国际</a>
-  <a class="tab" href="#s-society">社会</a>
-</div>
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+      <a href="#ai" class="tab-item active">AI Coding</a>
+      <a href="#tech" class="tab-item">科技</a>
+      <a href="#politics" class="tab-item">时政</a>
+      <a href="#economy" class="tab-item">经济</a>
+      <a href="#international" class="tab-item">国际</a>
+      <a href="#society" class="tab-item">社会</a>
+    </div>
 
-<script>
-(function(){
-'use strict';
-// Highlight active tab on scroll
-var tabs = document.querySelectorAll('.tab');
-var sections = document.querySelectorAll('.sc');
-function highlight(){
-  var top = window.scrollY + 60;
-  var cur = -1;
-  sections.forEach(function(s,i){
-    if(top >= s.offsetTop) cur = i;
-  });
-  tabs.forEach(function(t,i){
-    t.className = 'tab' + (i === cur ? ' on' : '');
-  });
-}
-window.addEventListener('scroll', highlight, {passive:true});
-highlight();
+    <div class="divider"></div>
 
-// Date
-document.getElementById('d').textContent = new Date().toLocaleDateString('zh-CN',{month:'long',day:'numeric',weekday:'short'});
-})();
-</script>
+    <!-- AI CODING Section -->
+    <div class="section anchor" id="ai">
+      <div class="section-label">AI Coding</div>
 
-<!-- ═══ AI CODING ═══ -->
-<div class="sc" id="s-ai">
-<div class="sc-hd"><span class="sc-l">AI CODING</span><span class="sc-c">5篇</span></div>
+      <div class="news-item">
+        <a href="https://www.chinaz.com/ainews/28965.shtml" target="_blank" rel="noopener" class="news-title">SpaceX将以600亿美元估值全股票收购Cursor，交易预计Q3完成</a>
+        <div class="news-meta"><span class="news-source">AIbase</span> · 2026.06.17</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.apple.com/newsroom/2026/06/apple-wwdc-2026-recap/" target="_blank">Apple WWDC 2026 · Siri AI 迎来史上最大重构</a></div>
-  <div class="ni-m"><span class="ni-tag">WWDC</span><span class="ni-src"><a href="https://www.apple.com/newsroom/2026/06/apple-wwdc-2026-recap/" target="_blank">Apple Newsroom</a></span><span>2026-06-11</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.weste.net/2026/06-16/OpenCode.html" target="_blank" rel="noopener" class="news-title">OpenCode登顶LogRocket《AI开发工具实力榜》，超越Cursor、Claude Code</a>
+        <div class="news-meta"><span class="news-source">西部数码</span> · 2026.06.16</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://openai.com/blog/codex-weekly-active-users" target="_blank">OpenAI Codex 周活跃开发者突破 500 万，GitHub Copilot 份额承压</a></div>
-  <div class="ni-m"><span class="ni-tag">AI工具</span><span class="ni-src"><a href="https://openai.com/blog" target="_blank">OpenAI Blog</a></span><span>2026-06-10</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.ithome.com/0/963/985.htm" target="_blank" rel="noopener" class="news-title">智谱发布ZCode 3.0：全面切换自研Agent内核，深度适配GLM-5.2</a>
+        <div class="news-meta"><span class="news-source">IT之家</span> · 2026.06.13</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.thepaper.cn/newsdetail_forward_29000000" target="_blank">国内首份具身智能标准正式实施，人形机器人商业化提速</a></div>
-  <div class="ni-m"><span class="ni-tag">标准</span><span class="ni-src"><a href="https://www.thepaper.cn" target="_blank">澎湃新闻</a></span><span>2026-06-08</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.winzheng.com/article/anthropic-claude-opus-4-8-release" target="_blank" rel="noopener" class="news-title">Anthropic发布Claude Opus 4.8，编码与推理能力再升级</a>
+        <div class="news-meta"><span class="news-source">Winzheng</span> · 2026.05.29</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://blog.google/technology/ai/gemini-code-assist-enterprise/" target="_blank">Google Gemini Code Assist 正式上线企业版，支持全仓库代码生成</a></div>
-  <div class="ni-m"><span class="ni-tag">AI编程</span><span class="ni-src"><a href="https://blog.google" target="_blank">Google Blog</a></span><span>2026-06-07</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://freedeepseekapi.com/zh/blog/deepseek-v4-vs-gpt54-claude46-gemini31" target="_blank" rel="noopener" class="news-title">DeepSeek V4正式发布并开源：支持100万tokens上下文，MIT许可证</a>
+        <div class="news-meta"><span class="news-source">FreeDeepSeek API</span> · 2026.04.24</div>
+      </div>
+    </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.infoq.cn/article/2026-06-ai-lowcode/" target="_blank">低代码 + AI Agent 融合趋势：2026 年 Q2 开发者调研报告</a></div>
-  <div class="ni-m"><span class="ni-tag">调研</span><span class="ni-src"><a href="https://www.infoq.cn" target="_blank">InfoQ</a></span><span>2026-06-06</span></div>
-</div>
-</div>
+    <div class="divider"></div>
 
-<!-- ═══ 科技 ═══ -->
-<div class="sc" id="s-tech">
-<div class="sc-hd"><span class="sc-l">科技</span><span class="sc-c">5篇</span></div>
+    <!-- 科技 Section -->
+    <div class="section anchor" id="tech">
+      <div class="section-label">科技</div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.qualcomm.com/news/releases/2026/06/snapdragon-x-gen3" target="_blank">高通发布骁龙 X Gen3，AI 算力翻倍，面向 2027 旗舰手机</a></div>
-  <div class="ni-m"><span class="ni-tag">芯片</span><span class="ni-src"><a href="https://www.qualcomm.com/news" target="_blank">Qualcomm</a></span><span>2026-06-14</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.apple.com.cn/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/" target="_blank" rel="noopener" class="news-title">Apple WWDC26：发布新一代Apple智能与Siri AI，iOS 27今秋推送</a>
+        <div class="news-meta"><span class="news-source">Apple Newsroom</span> · 2026.06.08</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.theverge.com/2026/6/12/apple-vision-pro-2-specs" target="_blank">Apple Vision Pro 2 量产在即，重量减轻 30%，价格降至 ¥24,999</a></div>
-  <div class="ni-m"><span class="ni-tag">XR</span><span class="ni-src"><a href="https://www.theverge.com" target="_blank">The Verge</a></span><span>2026-06-12</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://news.qq.com/rain/a/20260620A05WVX00" target="_blank" rel="noopener" class="news-title">人形机器人产业创新联盟在上海成立，集聚120余家成员单位</a>
+        <div class="news-meta"><span class="news-source">腾讯新闻</span> · 2026.06.20</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.spacex.com/launches/starship-2026-june/" target="_blank">SpaceX Starship 第五飞成功，首次实现轨道级回收</a></div>
-  <div class="ni-m"><span class="ni-tag">航天</span><span class="ni-src"><a href="https://www.spacex.com" target="_blank">SpaceX</a></span><span>2026-06-09</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://finance.sina.com.cn/wm/2026-06-18/doc-inicuupx3347967.shtml" target="_blank" rel="noopener" class="news-title">成都人形机器人创新中心拿下千台级大单，人形机器人量产拐点已至</a>
+        <div class="news-meta"><span class="news-source">新浪财经</span> · 2026.06.18</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.mi.com/news/2026/xiaomi-ev-suv" target="_blank">小米 SU7 交付突破 10 万台，第二款车型 SUV 路测曝光</a></div>
-  <div class="ni-m"><span class="ni-tag">汽车</span><span class="ni-src"><a href="https://www.mi.com" target="_blank">小米官方</a></span><span>2026-06-06</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://cloud.tencent.com/developer/article/2684137" target="_blank" rel="noopener" class="news-title">英伟达发布2nm工艺Rubin架构GPU，算力提升10倍</a>
+        <div class="news-meta"><span class="news-source">腾讯云开发者</span> · 2026.06.07</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.ctee.com.tw/news/202606050001" target="_blank">台积电 2nm 工艺 2026 下半年量产，苹果高通为首批客户</a></div>
-  <div class="ni-m"><span class="ni-tag">半导体</span><span class="ni-src"><a href="https://www.ctee.com.tw" target="_blank">工商时报</a></span><span>2026-06-05</span></div>
-</div>
-</div>
+      <div class="news-item">
+        <a href="https://news.qq.com/rain/a/20260617A099P800" target="_blank" rel="noopener" class="news-title">2026世界人工智能大会定于7月17日举办，超300款AI产品将全球首发</a>
+        <div class="news-meta"><span class="news-source">腾讯新闻</span> · 2026.06.17</div>
+      </div>
+    </div>
 
-<!-- ═══ 时政 ═══ -->
-<div class="sc" id="s-politics">
-<div class="sc-hd"><span class="sc-l">时政</span><span class="sc-c">5篇</span></div>
+    <div class="divider"></div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.federalreserve.gov/newsevents/pressreleases/2026-june-fed-rate" target="_blank">美联储 6 月议息会议：按兵不动，年内降息预期再降</a></div>
-  <div class="ni-m"><span class="ni-tag">货币</span><span class="ni-src"><a href="https://www.federalreserve.gov" target="_blank">Federal Reserve</a></span><span>2026-06-12</span></div>
-</div>
+    <!-- 时政 Section -->
+    <div class="section anchor" id="politics">
+      <div class="section-label">时政</div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.reuters.com/world/europe/eu-china-ev-tariffs-2026-06/" target="_blank">欧盟正式对中国电动车加征关税，最高 38%，中欧磋商仍继续</a></div>
-  <div class="ni-m"><span class="ni-tag">贸易</span><span class="ni-src"><a href="https://www.reuters.com" target="_blank">Reuters</a></span><span>2026-06-11</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://education.news.cn/20260623/32f2d0cb6ce44826ade840d71d5a7d75/c.html" target="_blank" rel="noopener" class="news-title">2026高考成绩今起陆续可查，多地公布志愿填报安排</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.gov.cn/statecouncil/2026-06/economic-stimulus/" target="_blank">国务院发文：20 条稳经济措施，重点支持消费和民间投资</a></div>
-  <div class="ni-m"><span class="ni-tag">政策</span><span class="ni-src"><a href="https://www.gov.cn" target="_blank">中国政府网</a></span><span>2026-06-08</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/20260623/86489702dcb046999c3edc3eecb53c90/c.html" target="_blank" rel="noopener" class="news-title">3年多减少1.2亿张，信用卡加快"瘦身"提质</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.bbc.com/zhongwen/simp/world-2026-june-g7-summit" target="_blank">G7 峰会公报：涉华措辞升级，首次提及台海和平稳定</a></div>
-  <div class="ni-m"><span class="ni-tag">外交</span><span class="ni-src"><a href="https://www.bbc.com/zhongwen" target="_blank">BBC 中文</a></span><span>2026-06-07</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260622/f43f2552247f44d3b0f80bea72388447/c.html" target="_blank" rel="noopener" class="news-title">外交部：希望伊美双方保持谈判势头继续相向而行</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.nikkei.com/asia/japan-china-korea-summit-2026" target="_blank">中日韩领导人会议重启：三国同意加速自贸协定谈判</a></div>
-  <div class="ni-m"><span class="ni-tag">区域</span><span class="ni-src"><a href="https://www.nikkei.com" target="_blank">日本经济新闻</a></span><span>2026-06-05</span></div>
-</div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260622/9482be44584344d0af58fc89de8c5dd6/c.html" target="_blank" rel="noopener" class="news-title">外交部：越来越多证据揭露日军细菌战罪行</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
 
-<!-- ═══ 经济 ═══ -->
-<div class="sc" id="s-economy">
-<div class="sc-hd"><span class="sc-l">经济</span><span class="sc-c">5篇</span></div>
+      <div class="news-item">
+        <a href="https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202606/t20260608_1439860.html" target="_blank" rel="noopener" class="news-title">教育部部署2026届高校毕业生就业"百日冲刺"行动</a>
+        <div class="news-meta"><span class="news-source">教育部</span> · 2026.06.08</div>
+      </div>
+    </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.reuters.com/markets/asia/asia-stocks-june-2026/" target="_blank">A 股三大指数收跌，成交额缩至 8000 亿，市场等待政策信号</a></div>
-  <div class="ni-m"><span class="ni-tag">A股</span><span class="ni-src"><a href="https://www.reuters.com/markets" target="_blank">Reuters</a></span><span>2026-06-12</span></div>
-</div>
+    <div class="divider"></div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.stats.gov.cn/sj/zxfb/202606/t20260615_social-retail/" target="_blank">5 月社零总额同比增 3.7%，汽车家电消费回暖明显</a></div>
-  <div class="ni-m"><span class="ni-tag">消费</span><span class="ni-src"><a href="https://www.stats.gov.cn" target="_blank">国家统计局</a></span><span>2026-06-15</span></div>
-</div>
+    <!-- 经济 Section -->
+    <div class="section anchor" id="economy">
+      <div class="section-label">经济</div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.bloomberg.com/news/articles/2026-06-10/china-property-expectations" target="_blank">楼市新政满月：一线城市二手房成交量回升，价格企稳</a></div>
-  <div class="ni-m"><span class="ni-tag">地产</span><span class="ni-src"><a href="https://www.bloomberg.com" target="_blank">Bloomberg</a></span><span>2026-06-10</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://xueqiu.com/9973808358/395985884" target="_blank" rel="noopener" class="news-title">A股放量大涨：上证指数收涨1.78%报4163点，全市场成交额3.76万亿</a>
+        <div class="news-meta"><span class="news-source">雪球</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.cnbc.com/2026/06/09/bitcoin-etf-record-inflows.html" target="_blank">比特币重回 70,000 美元，美国 BTC ETF 单周净流入创纪录</a></div>
-  <div class="ni-m"><span class="ni-tag">加密</span><span class="ni-src"><a href="https://www.cnbc.com" target="_blank">CNBC</a></span><span>2026-06-09</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://baijiahao.baidu.com/s?id=1868743674857829494" target="_blank" rel="noopener" class="news-title">美国财政部发布60天一般许可，暂时解除对伊朗石油制裁</a>
+        <div class="news-meta"><span class="news-source">百家号</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.caixin.com/2026-06-06/credit-data-may.html" target="_blank">5 月社融数据超预期，企业中长期贷款同比多增</a></div>
-  <div class="ni-m"><span class="ni-tag">金融</span><span class="ni-src"><a href="https://www.caixin.com" target="_blank">财新</a></span><span>2026-06-06</span></div>
-</div>
-</div>
+      <div class="news-item">
+        <a href="https://www.moe.gov.cn/jyb_xwfb/s6052/moe_838/202606/t20260612_1440488.html" target="_blank" rel="noopener" class="news-title">国务院常务会议审议通过《教育发展"十五五"规划》</a>
+        <div class="news-meta"><span class="news-source">教育部</span> · 2026.06.11</div>
+      </div>
 
-<!-- ═══ 国际 ═══ -->
-<div class="sc" id="s-world">
-<div class="sc-hd"><span class="sc-l">国际</span><span class="sc-c">5篇</span></div>
+      <div class="news-item">
+        <a href="https://finance.sina.com.cn/stock/relnews/cn/2026-06-10/doc-iniavwqm1588286.shtml" target="_blank" rel="noopener" class="news-title">苹果官宣AI升级，国内"果链"企业抢抓机遇</a>
+        <div class="news-meta"><span class="news-source">新浪财经</span> · 2026.06.10</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.bbc.com/news/world-middle-east-2026-gaza" target="_blank">加沙停火谈判再次破裂，以军恢复对南部地区地面进攻</a></div>
-  <div class="ni-m"><span class="ni-tag">中东</span><span class="ni-src"><a href="https://www.bbc.com/news" target="_blank">BBC</a></span><span>2026-06-13</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://baijiahao.baidu.com/s?id=1868708957861905044" target="_blank" rel="noopener" class="news-title">券商、稀有金属、氟化工单日暴涨，市场积累大量短线浮盈</a>
+        <div class="news-meta"><span class="news-source">百家号</span> · 2026.06.23</div>
+      </div>
+    </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.reuters.com/world/europe/ukraine-russia-war-june-2026-latest/" target="_blank">俄乌战事第 16 个月：双方在赫尔松方向激烈交火</a></div>
-  <div class="ni-m"><span class="ni-tag">俄乌</span><span class="ni-src"><a href="https://www.reuters.com" target="_blank">Reuters</a></span><span>2026-06-10</span></div>
-</div>
+    <div class="divider"></div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.aljazeera.com/news/2026/6/north-korea-ballistic-missile/" target="_blank">朝鲜再次试射弹道导弹，日韩强烈抗议，联合国安理会紧急磋商</a></div>
-  <div class="ni-m"><span class="ni-tag">亚太</span><span class="ni-src"><a href="https://www.aljazeera.com" target="_blank">Al Jazeera</a></span><span>2026-06-09</span></div>
-</div>
+    <!-- 国际 Section -->
+    <div class="section anchor" id="international">
+      <div class="section-label">国际</div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.washingtonpost.com/world/2026/06/07/india-china-border-talks/" target="_blank">中印边境事务磋商取得进展，双方同意建立更多信任措施</a></div>
-  <div class="ni-m"><span class="ni-tag">边界</span><span class="ni-src"><a href="https://www.washingtonpost.com" target="_blank">Washington Post</a></span><span>2026-06-07</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260622/9101491ffea945faa8b0b4349a56bbf2/c.html" target="_blank" rel="noopener" class="news-title">美国暂时解除对伊朗石油制裁，伊美瑞士谈判进展"令人鼓舞"</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.ft.com/content/climate-cop30-brazil-2026" target="_blank">COP30 气候大会在巴西开幕：全球碳市场机制成核心议题</a></div>
-  <div class="ni-m"><span class="ni-tag">气候</span><span class="ni-src"><a href="https://www.ft.com" target="_blank">Financial Times</a></span><span>2026-06-05</span></div>
-</div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260622/51640875c9e644108c64a0c7e2f0dbc9/c.html" target="_blank" rel="noopener" class="news-title">英国首相斯塔默宣布辞职，凸显英国政坛深层困局</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
 
-<!-- ═══ 社会 ═══ -->
-<div class="sc" id="s-society">
-<div class="sc-hd"><span class="sc-l">社会</span><span class="sc-c">5篇</span></div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260623/b6b9e943ab4248079ef2fa105e9a26d2/c.html" target="_blank" rel="noopener" class="news-title">俄方称乌军袭击沃罗涅日州，导致5名平民死亡</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.thepaper.cn/newsdetail_forward_29000000" target="_blank">2026 年高考报名人数 1,342 万，再创历史新高</a></div>
-  <div class="ni-m"><span class="ni-tag">教育</span><span class="ni-src"><a href="https://www.thepaper.cn" target="_blank">澎湃新闻</a></span><span>2026-06-07</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260623/c95baa34a6854e59987c2737b5186771/c.html" target="_blank" rel="noopener" class="news-title">以色列坚称将继续在黎巴嫩南部开展军事行动</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://news.cnr.cn/native/20260608/t20260608_mandatory-retirement-delay/" target="_blank">渐进式延迟退休方案落地：2027 年起分步实施</a></div>
-  <div class="ni-m"><span class="ni-tag">政策</span><span class="ni-src"><a href="https://news.cnr.cn" target="_blank">央广网</a></span><span>2026-06-08</span></div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/world/20260622/30f85b7e93c145b495760c1f445d108f/c.html" target="_blank" rel="noopener" class="news-title">东盟秘书长：东盟和中国应深化合作应对全球挑战</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
+    </div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.yicai.com/news/2026/06/health-insurance-reform/" target="_blank">国家医保局：2026 年起跨省异地就医直接结算范围扩大至门诊慢特病</a></div>
-  <div class="ni-m"><span class="ni-tag">医疗</span><span class="ni-src"><a href="https://www.yicai.com" target="_blank">第一财经</a></span><span>2026-06-06</span></div>
-</div>
+    <div class="divider"></div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.people.com.cn/2026/06/05/digital-yuan-expansion/" target="_blank">数字人民币试点扩至全部省会城市，累计交易额破万亿</a></div>
-  <div class="ni-m"><span class="ni-tag">数字</span><span class="ni-src"><a href="https://www.people.com.cn" target="_blank">人民网</a></span><span>2026-06-05</span></div>
-</div>
+    <!-- 社会 Section -->
+    <div class="section anchor" id="society">
+      <div class="section-label">社会</div>
 
-<div class="ni">
-  <div class="ni-h"><a href="https://www.xinhuanet.com/tech/2026-06/04/electric-vehicle-charging-piles/" target="_blank">全国充电桩保有量突破 1,200 万台，车桩比接近 2:1</a></div>
-  <div class="ni-m"><span class="ni-tag">基建</span><span class="ni-src"><a href="https://www.xinhuanet.com" target="_blank">新华网</a></span><span>2026-06-04</span></div>
-</div>
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/local/20260623/843a058ee19c4aebb02bb5442f8f1f0f/c.html" target="_blank" rel="noopener" class="news-title">安徽一河段水体异常变红，当地通报原因并全力处置</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
 
-<div class="ft">
-  <a href="https://alistairlendor.com">← 返回控制台</a> · 每日 09:00 更新
-</div>
+      <div class="news-item">
+        <a href="https://www.news.cn/fortune/20260622/9f51de8c16074725b8a52968ac2d4407/c.html" target="_blank" rel="noopener" class="news-title">从一桌一集一屋，看银发经济新活力</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
 
+      <div class="news-item">
+        <a href="https://www.news.cn/local/20260622/b15fc93c5a224893b318bae919143b53/c.html" target="_blank" rel="noopener" class="news-title">西海固旱塬上的葡萄熟了，特色农业助力乡村振兴</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
+
+      <div class="news-item">
+        <a href="https://www.news.cn/sports/20260623/547b40743f814232bcad178abd95539f/c.html" target="_blank" rel="noopener" class="news-title">湖南足协回应交流赛冲突：暂停涉事人员参加省内一切足球活动</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.23</div>
+      </div>
+
+      <div class="news-item">
+        <a href="https://www.news.cn/fortune/20260622/00737c49038745c185e97db4f8a64073/c.html" target="_blank" rel="noopener" class="news-title">上海国际电影节带动经济效益近53亿元</a>
+        <div class="news-meta"><span class="news-source">新华社</span> · 2026.06.22</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Back link -->
+    <a href="https://alistairlendor.com" class="back-link">← 返回控制台</a>
+  </div>
 </body>
 </html>
