@@ -3,106 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Briefing - 每日综合简报</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Briefing — 2026-06-27</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: #ffffff;
     color: #171717;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
-  a { color: inherit; text-decoration: none; }
-  a:hover { text-decoration: underline; text-decoration-color: rgba(0,0,0,0.3); text-underline-offset: 3px; }
-
   .page {
     max-width: 520px;
     margin: 0 auto;
-    padding: 0 20px 80px;
+    padding: 40px 20px 60px;
   }
-
   /* Header */
   .header {
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
-    padding: 32px 0 0;
+    align-items: baseline;
+    margin-bottom: 32px;
   }
-  .header-title {
+  .header h1 {
     font-size: 28px;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: #171717;
   }
-  .header-date {
+  .header .date {
     font-family: 'Geist Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
     color: #808080;
-    letter-spacing: -0.02em;
+    font-weight: 400;
   }
-
-  /* Divider */
-  .divider {
-    box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.08);
-    margin: 16px 0;
-  }
-
   /* Tab navigation */
-  .tab-nav {
+  .tabs {
     display: flex;
     gap: 0;
     overflow-x: auto;
+    margin-bottom: 36px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    margin: 0 -20px;
-    padding: 0 20px;
   }
-  .tab-nav::-webkit-scrollbar { display: none; }
-  .tab-item {
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
     flex-shrink: 0;
     padding: 8px 14px;
     font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #808080;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: color 0.15s;
-  }
-  .tab-item:hover { color: #171717; }
-  .tab-item.active { color: #171717; }
-
-  /* Section */
-  .section {
-    margin-top: 36px;
-  }
-  .section-anchor {
-    position: relative;
-    top: -20px;
-    visibility: hidden;
-  }
-  .section-label {
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #808080;
-    margin-bottom: 16px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab:hover {
+    color: #171717;
+    border-bottom-color: #171717;
+  }
+  /* Section */
+  .section {
+    margin-bottom: 40px;
   }
   .section-title {
-    font-size: 20px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: -0.03em;
-    color: #171717;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #808080;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.08);
   }
-
   /* News item */
   .news-item {
     padding: 14px 0;
@@ -112,51 +88,58 @@
     box-shadow: none;
   }
   .news-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    line-height: 1.5;
     color: #171717;
-    letter-spacing: -0.01em;
-  }
-  .news-title a:hover { color: #171717; }
-  .news-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 6px;
-  }
-  .news-source {
-    font-size: 11px;
-    color: #999999;
-    font-weight: 400;
-  }
-  .news-date {
-    font-family: 'Geist Mono', monospace;
-    font-size: 10px;
-    color: #b0b0b0;
-    letter-spacing: -0.02em;
-  }
-
-  /* Back link */
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 48px;
-    padding: 8px 0;
-    font-size: 13px;
-    font-weight: 500;
-    color: #666666;
+    text-decoration: none;
+    line-height: 1.5;
+    display: block;
     transition: color 0.15s;
   }
-  .back-link:hover { color: #171717; text-decoration: none; }
-  .back-arrow { font-size: 15px; }
-
-  /* Responsive */
-  @media (max-width: 520px) {
-    .page { padding: 0 16px 60px; }
-    .header-title { font-size: 24px; }
-    .tab-nav { margin: 0 -16px; padding: 0 16px; }
+  .news-title:hover {
+    color: #4d4d4d;
+  }
+  .news-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    align-items: center;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #808080;
+  }
+  .news-dot {
+    width: 2px;
+    height: 2px;
+    background: #d4d4d4;
+    border-radius: 50%;
+  }
+  .news-time {
+    font-size: 12px;
+    color: #808080;
+  }
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.08);
+  }
+  .footer a {
+    font-size: 14px;
+    color: #171717;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.15s;
+  }
+  .footer a:hover {
+    opacity: 0.6;
+  }
+  /* Anchor targets */
+  .anchor {
+    position: relative;
+    top: -20px;
+    visibility: hidden;
   }
 </style>
 </head>
@@ -165,314 +148,336 @@
 
   <!-- Header -->
   <div class="header">
-    <div class="header-title">Briefing</div>
-    <div class="header-date">2026.06.26</div>
+    <h1>Briefing</h1>
+    <span class="date">2026.06.27</span>
   </div>
-
-  <div class="divider"></div>
 
   <!-- Tab navigation -->
-  <div class="tab-nav">
-    <a href="#ai" class="tab-item">AI CODING</a>
-    <a href="#tech" class="tab-item">科技</a>
-    <a href="#politics" class="tab-item">时政</a>
-    <a href="#economy" class="tab-item">经济</a>
-    <a href="#international" class="tab-item">国际</a>
-    <a href="#society" class="tab-item">社会</a>
+  <div class="tabs">
+    <a class="tab" href="#ai">AI Coding</a>
+    <a class="tab" href="#tech">科技</a>
+    <a class="tab" href="#politics">时政</a>
+    <a class="tab" href="#economy">经济</a>
+    <a class="tab" href="#international">国际</a>
+    <a class="tab" href="#society">社会</a>
   </div>
-
-  <div class="divider"></div>
 
   <!-- AI CODING -->
-  <div class="section" id="ai">
-    <div class="section-anchor" id="ai-anchor"></div>
-    <div class="section-label">AI CODING</div>
-    <div class="section-title">AI 编程 &amp; 大模型</div>
+  <div class="anchor" id="ai"></div>
+  <div class="section">
+    <div class="section-title">AI Coding</div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/722.htm" target="_blank" class="news-title">核心研究员接连离职后，谷歌重组 AI 编程小组试图追赶 Anthropic</a>
+      <a class="news-title" href="https://www.weste.net/2026/06-16/OpenCode.html" target="_blank">OpenCode 登顶 LogRocket AI 开发工具实力榜，超越 Cursor 与 Claude Code</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.25</span>
+        <span class="news-source">西部数码</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-16</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/734.htm" target="_blank" class="news-title">OpenAI 坚持万亿美元估值底线，考虑将 IPO 推迟至 2027 年</a>
+      <a class="news-title" href="https://www.weste.net/2026/06-25/OpenAI-Jalapeno.html" target="_blank">OpenAI 发布首款自研 AI 推理芯片 Jalapeño，与博通联合打造、仅用 9 个月完成</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">西部数码</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-25</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/702.htm" target="_blank" class="news-title">2025 年我国具身智能市场规模约 9150 亿元，预计今年将冲上万亿</a>
+      <a class="news-title" href="https://finance.sina.com.cn/wm/2026-06-17/doc-inicsmhz3921883.shtml" target="_blank">微软考虑引入 DeepSeek V4 作为 Copilot 低成本选项，Claude 与 GPT 不再独占</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.25</span>
+        <span class="news-source">新浪财经</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-17</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/730.htm" target="_blank" class="news-title">华为与湖北移动完成全国运营商首个 AI 推理加速方案现网测试</a>
+      <a class="news-title" href="https://www.uuaihub.com/blog/ai-coding-tools-2026" target="_blank">2026 主流 AI 编程助手横评：Cursor、GitHub Copilot、Windsurf 与通义灵码全面对比</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">UUAI Hub</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-25</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/729.htm" target="_blank" class="news-title">古尔曼：苹果罕见调整 Mac 芯片规划，跳过 M6 Pro/Max、押注 AI 导向的 M7 系列</a>
+      <a class="news-title" href="https://braindetox.kr/zh/posts/ai_model_comparison_2026.html" target="_blank">2026 年 6 月旗舰 AI 模型对比：Claude Opus 4.8、GPT-5.5、Gemini 3.1 与 DeepSeek V4</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">Brain Detox</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-15</span>
       </div>
     </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- 科技 -->
-  <div class="section" id="tech">
-    <div class="section-anchor" id="tech-anchor"></div>
-    <div class="section-label">科技</div>
-    <div class="section-title">科技产业动态</div>
+  <div class="anchor" id="tech"></div>
+  <div class="section">
+    <div class="section-title">科技</div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/732.htm" target="_blank" class="news-title">苹果因内存短缺大幅涨价，iPad/Mac 等硬件涨价落地，股价单日下跌 6.15%</a>
+      <a class="news-title" href="https://www.chinanews.com.cn/cj/2026/06-24/10646364.shtml" target="_blank">2026 年世界移动通信大会在上海开幕，AI 普惠成核心议题</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">中国新闻网</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-24</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/745.htm" target="_blank" class="news-title">美国政府以《网联汽车原则》为由，禁止新款极星电动汽车在美销售</a>
+      <a class="news-title" href="https://uicn.cn/news/june-2026-phone-roundup" target="_blank">2026 年 6 月新机潮：华为 nova 16、小米 17T、红米旗舰密集发布</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">UICN</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-01</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/726.htm" target="_blank" class="news-title">微软宣布 Xbox 主机 8 月 1 日起全球涨价，512GB 版上调 100 美元</a>
+      <a class="news-title" href="https://tech.sina.com.cn/roll/" target="_blank">特斯拉 FSD 全面改为订阅制，中国市场是否跟进受关注</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">新浪科技</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/696.htm" target="_blank" class="news-title">Adobe 宣布收购 Topaz Labs 强化 AI 视频与图像布局，交易预计下半年完成</a>
+      <a class="news-title" href="https://www.eet-china.com/mp/hotweekly" target="_blank">OpenAI 牵手博通亮出首款自研 AI 芯片，全球半导体格局生变</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.25</span>
+        <span class="news-source">电子工程专辑</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-23</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.ithome.com/0/968/698.htm" target="_blank" class="news-title">2026 上海世界移动通信大会开幕，华为携手运营商发布多项创新成果</a>
+      <a class="news-title" href="https://www.news.cn/tech/" target="_blank">上海 AI 深入新疆"上班"，链博会人工智能专区展示前沿应用</a>
       <div class="news-meta">
-        <span class="news-source">IT之家</span>
-        <span class="news-date">06.25</span>
+        <span class="news-source">新华科技</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- 时政 -->
-  <div class="section" id="politics">
-    <div class="section-anchor" id="politics-anchor"></div>
-    <div class="section-label">时政</div>
-    <div class="section-title">时政要闻</div>
+  <div class="anchor" id="politics"></div>
+  <div class="section">
+    <div class="section-title">时政</div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/politics/20260626/218c1fa6592d4debb51770eeb44955c5/c.html" target="_blank" class="news-title">伟大征程丨党的十三大：确立党在社会主义初级阶段基本路线</a>
+      <a class="news-title" href="https://www.news.cn/politics/20260627/61377246f9cd4257914caa80649dc1f3/c.html" target="_blank">新华社权威 AI 时政资讯智能体"新华语典"正式上线</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/politics/20260626/645766e11f3d4b17981fe1ad3b9f42d7/c.html" target="_blank" class="news-title">牢记初心使命 奋进复兴征程｜重庆：红岩精神照亮时代新征程</a>
+      <a class="news-title" href="https://www.news.cn/politics/20260627/bb0736537ca8423fa8d7fda3066700d7/c.html" target="_blank">北方高温周末将成片发展，南方主雨带逐渐北抬</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/politics/20260625/aacc709202684ef495eb82c593cc4b32/c.html" target="_blank" class="news-title">2026 年高校毕业生档案转递接收服务专项行动开展</a>
+      <a class="news-title" href="https://www.news.cn/politics/20260627/9df11b59cb644582bafe59ffe707a429/c.html" target="_blank">上海电视节揭晓白玉兰奖，《太平年》等电视剧获奖</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/politics/20260625/0adbce3029404565b9105e83cf04fba6/c.html" target="_blank" class="news-title">全国土地日：珍惜每一寸土地，促进高质量发展</a>
+      <a class="news-title" href="https://www.news.cn/politics/20260627/284b39c80b4a4bcfa98b7e42c198c91e/c.html" target="_blank">伟大征程｜党的十四大：社会主义市场经济春雷激荡</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/politics/20260625/7264a728b3a54314a5e1aff934c6f585/c.html" target="_blank" class="news-title">广电总局发布 AI 微短剧分类分层标准，7 月 1 日起施行</a>
+      <a class="news-title" href="https://www.news.cn/politics/20260627/2b98294a0a3c43edae03b0892580b030/c.html" target="_blank">智库报告《购在中国：共享开放发展新机遇》引发热议</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- 经济 -->
-  <div class="section" id="economy">
-    <div class="section-anchor" id="economy-anchor"></div>
-    <div class="section-label">经济</div>
-    <div class="section-title">经济 &amp; A 股</div>
+  <div class="anchor" id="economy"></div>
+  <div class="section">
+    <div class="section-title">经济</div>
 
     <div class="news-item">
-      <a href="http://finance.ce.cn/stock/gsgdbd/202606/t20260626_3052742.shtml" target="_blank" class="news-title">多因素共振，券商板块再现强势上涨</a>
+      <a class="news-title" href="https://finance.sina.com.cn/wm/2026-06-26/doc-inieuccn5138784.shtml" target="_blank">A 股 6 月 26 日全线大幅下挫：上证跌 2.26%，创业板跌 4.07%，近 4700 股收跌</a>
       <div class="news-meta">
-        <span class="news-source">中国经济网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">新浪财经</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="http://finance.ce.cn/stock/gsgdbd/202606/t20260626_3052672.shtml" target="_blank" class="news-title">年内新股"量质齐升"，资本市场与新质生产力双向赋能</a>
+      <a class="news-title" href="https://finance.sina.com.cn/stock/marketresearch/2026-06-26/doc-inietnfw2006505.shtml" target="_blank">A 股大跌原因找到：全球 AI 链震荡叠加前期获利盘集中出逃</a>
       <div class="news-meta">
-        <span class="news-source">中国经济网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">新浪财经</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="http://finance.ce.cn/stock/gsgdbd/202606/t20260626_3052659.shtml" target="_blank" class="news-title">6 月份 A 股公司分红派现总额有望突破 5600 亿元</a>
+      <a class="news-title" href="https://www.chinanews.com.cn/cj/2026/06-24/10646364.shtml" target="_blank">GSMA 报告：2025 年移动技术为中国创造 1.5 万亿美元经济价值，2030 年料达 2.1 万亿</a>
       <div class="news-meta">
-        <span class="news-source">中国经济网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">中国新闻网</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-24</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="http://my.finance.china.com.cn/" target="_blank" class="news-title">今日 A 股：上证指数 4120.28，+9.47 / +0.23%</a>
+      <a class="news-title" href="https://www.sohu.com/a/1032480446_122860723" target="_blank">6 月多条重磅政策落地：常住地基本公共服务、消费维权、财税改革密集推进</a>
       <div class="news-meta">
-        <span class="news-source">中国网财经</span>
-        <span class="news-date">06.26</span>
+        <span class="news-source">搜狐</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-05</span>
       </div>
     </div>
+
+    <div class="news-item">
+      <a class="news-title" href="https://enterprise.eastmoney.com/a/ccjdd.html" target="_blank">港股 IPO 持续升温，超八成项目引入基石投资者，上半年"吸金"逾 2000 亿港元</a>
+      <div class="news-meta">
+        <span class="news-source">东方财富</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
+      </div>
+    </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- 国际 -->
-  <div class="section" id="international">
-    <div class="section-anchor" id="international-anchor"></div>
-    <div class="section-label">国际</div>
-    <div class="section-title">国际局势</div>
+  <div class="anchor" id="international"></div>
+  <div class="section">
+    <div class="section-title">国际</div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/world/20260626/9d6cc110c25d4501a58ac2b47411af52/c.html" target="_blank" class="news-title">委内瑞拉强震已致 164 死 971 伤，2 名中国公民遇难</a>
+      <a class="news-title" href="https://www.news.cn/world/20260627/b1a5a2e08c94456ca2d918b705b19668/c.html" target="_blank">布基纳法索政府宣布与法国断交，法国外交部称决定"毫无根据"</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/world/20260626/b21857062aba4cc7bf35825c429c1ab3/c.html" target="_blank" class="news-title">以防长称以军将"无限期"驻留黎南等"安全区"</a>
+      <a class="news-title" href="https://www.news.cn/world/20260627/5f38f437c1c34ec39f7019dba5d8ce78/c.html" target="_blank">美军称已对伊朗发动打击，作为商船遭袭事件的回应</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.26</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/world/20260625/91f1d7fcca3846c4b338d106dee176b5/c.html" target="_blank" class="news-title">霍尔木兹海峡通航量恢复至战事前近六成水平</a>
+      <a class="news-title" href="https://www.news.cn/world/20260627/27b48d6963e74eb2a214b265a8b5476d/c.html" target="_blank">委内瑞拉强震中国公民遇难人数升至 7 人，拉共体呼吁成员国参与救援</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/world/20260624/c1ad4f1c900640eb8eb9e833bc1437db/c.html" target="_blank" class="news-title">普京强调俄乌和谈的四个基础，中方呼吁当事方推动局势降温</a>
+      <a class="news-title" href="https://www.news.cn/world/20260627/e478e0ba2ad74c35bfc7d348494e6d08/c.html" target="_blank">黎以美达成三方框架协议，黎巴嫩称系恢复国家主权第一步</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.24</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="https://www.news.cn/world/20260625/0715cbc648ad489997c0541d79446867/c.html" target="_blank" class="news-title">欧美贸易协议最终获批，国际贸易格局迎来新变化</a>
+      <a class="news-title" href="https://www.news.cn/world/20260627/90471b69e3c44c4d94b14bd168e46369/c.html" target="_blank">中国代表在联合国发声：绝不允许"新型军国主义"成势为患</a>
       <div class="news-meta">
         <span class="news-source">新华网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-27</span>
       </div>
     </div>
+
   </div>
-
-  <div class="divider"></div>
 
   <!-- 社会 -->
-  <div class="section" id="society">
-    <div class="section-anchor" id="society-anchor"></div>
-    <div class="section-label">社会</div>
-    <div class="section-title">社会民生</div>
+  <div class="anchor" id="society"></div>
+  <div class="section">
+    <div class="section-title">社会</div>
 
     <div class="news-item">
-      <a href="http://www.cnr.cn/mspd/yw/20260625/t20260625_527675693.shtml" target="_blank" class="news-title">充牛羊、冒鹅腿，鸭肉为何成肉制品"万能替身"？重庆通报 23 起假劣肉制品案例</a>
+      <a class="news-title" href="https://www.sohu.com/a/1041529631_115865" target="_blank">全国多地公布 2026 年高考分数线，教育部发布志愿填报防骗"攻略"</a>
+      <div class="news-meta">
+        <span class="news-source">搜狐</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-25</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <a class="news-title" href="https://beijing.qianlong.com/2026/0626/8688400.shtml" target="_blank">北京 6 月 27 日 8 时起统考考生填报本科志愿，普通本科线 429 分</a>
+      <div class="news-meta">
+        <span class="news-source">千龙网</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <a class="news-title" href="https://news.qq.com/rain/a/20260626A0AMIF00" target="_blank">江苏 2026 年高考第一阶段志愿填报 6 月 28 日开始，本科计划 26.8 万人</a>
+      <div class="news-meta">
+        <span class="news-source">腾讯新闻</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-26</span>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <a class="news-title" href="https://www.cnr.cn/mspd/yw/" target="_blank">治理"老头乐"不是一禁了之，城乡公交不足等痛点待解决</a>
       <div class="news-meta">
         <span class="news-source">央广网</span>
-        <span class="news-date">06.25</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-23</span>
       </div>
     </div>
 
     <div class="news-item">
-      <a href="http://www.cnr.cn/mspd/yw/20260624/t20260624_527674129.shtml" target="_blank" class="news-title">银发经济不能只算经济账，更要算民生账、幸福账</a>
+      <a class="news-title" href="https://news.qq.com/rain/a/20260624A07DMH00" target="_blank">2026 年江苏高考录取分数线出炉，1620 所高校安排招生计划 38.7 万人</a>
       <div class="news-meta">
-        <span class="news-source">央广网</span>
-        <span class="news-date">06.24</span>
+        <span class="news-source">腾讯新闻</span>
+        <span class="news-dot"></span>
+        <span class="news-time">06-24</span>
       </div>
     </div>
 
-    <div class="news-item">
-      <a href="http://www.cnr.cn/mspd/yw/20260624/t20260624_527674131.shtml" target="_blank" class="news-title">网购危化品乱象必须整治，11 岁男孩在家做化学实验遇爆炸烧伤</a>
-      <div class="news-meta">
-        <span class="news-source">央广网</span>
-        <span class="news-date">06.24</span>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <a href="http://www.cnr.cn/mspd/yw/20260623/t20260623_527672809.shtml" target="_blank" class="news-title">治理"老头乐"不是一禁了之，应加快标准建设提供正规替代方案</a>
-      <div class="news-meta">
-        <span class="news-source">央广网</span>
-        <span class="news-date">06.23</span>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <a href="https://www.news.cn/politics/20260623/1184aff4c4b54ac8a1b3b25d9d5836fd/c.html" target="_blank" class="news-title">2026 高考成绩今起陆续可查，多地公布志愿填报安排</a>
-      <div class="news-meta">
-        <span class="news-source">新华网</span>
-        <span class="news-date">06.23</span>
-      </div>
-    </div>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- Back link -->
-  <a href="https://alistairlendor.com" class="back-link">
-    <span class="back-arrow">←</span> 返回控制台
-  </a>
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://alistairlendor.com">← 返回控制台</a>
+  </div>
 
 </div>
 </body>
